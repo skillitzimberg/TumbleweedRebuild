@@ -12,6 +12,7 @@ function Admin() {
         <p>Admin Works</p>
         <Customers />
         <Locations />
+        <Orders />
       </div>
     </div>
   );
