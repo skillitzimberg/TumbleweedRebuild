@@ -84,3 +84,4 @@ Orders will display the following . . .
 
 ## Study/Research Work Log
 - 9:30 AM: using draw.io to layout Admin homepage
+- 9:45 AM: using draw.io to layout Admin homepage
