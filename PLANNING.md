@@ -37,9 +37,24 @@ This project is intended to be a website where customers can place orders for pi
   * Delete an Order
 
 
+#### Admin can manage pickup Locations
+  * View all Locations
+  * Add a Location
+    * Enter Name
+    * Enter Description
+    * Enter Street Address & Postal code
+  * Edit a Location
+    * Edit Name
+    * Edit Description
+    * Edit Street Address & Postal code
+  * Delete a Location
+
 ### ORDERS:
 - Order number
 - Customer
+- Pickup Location
+- Scheduled Pickup Date
+- Date the Order was Picked up
 - List of Products ordered
 - Quantities for each Product ordered
 - Subtotal for each Product ordered
@@ -63,5 +78,5 @@ Orders will display the following . . .
 
 - Order
   * Order total
-  * Pickup location
-  * Pickup date & time
+  * Pickup Location
+  * Scheduled pickup date & time
