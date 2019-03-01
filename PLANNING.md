@@ -87,3 +87,4 @@ Orders will display the following . . .
 - 9:45 AM: using draw.io to layout Admin homepage
 - 10:30 AM: using draw.io to layout Component Tree
 - 10:45 AM: using draw.io to layout Component Tree
+- 11:15 AM: using draw.io to layout Component Tree
