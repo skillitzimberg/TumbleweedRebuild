@@ -10,6 +10,7 @@ function Admin() {
     <div>
       <div className="container">
         <p>Admin Works</p>
+        <Customers />
       </div>
     </div>
   );
