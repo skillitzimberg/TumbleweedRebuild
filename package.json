@@ -42,6 +42,7 @@
     "eslint-plugin-react": "^7.12.4",
     "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.29.0",
+    "jest": "^20.0.4",
     "react-hot-loader": "^3.0.0-beta.7",
     "style-loader": "^0.23.1",
     "stylelint": "^9.10.1",
