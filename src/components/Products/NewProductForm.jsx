@@ -1,6 +1,6 @@
 import React from 'react';
-import { v4 } from 'uuid';
-import Moment from 'moment';
+// import { v4 } from 'uuid';
+// import Moment from 'moment';
 // import c from './../constants';
 // import { connect } from 'react-redux';
 
