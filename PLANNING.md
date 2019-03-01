@@ -3,29 +3,43 @@ This project is intended to be a website where customers can place orders for pi
 
 ## Specifications
 
-- Admin can manage Customers
+### ADMIN USE CASES
+#### Admin can manage Customers
   * View all Customers
   * Add a Customer
+    * Enter Name
+    * Enter Phone number
+    * Enter Email address
+    * Enter Postal code
   * Edit a Customer
+    * Edit Name
+    * Edit Phone number
+    * Edit Email address
+    * Edit Postal code
   * Delete a Customer
 
 
-- Admin can manage Products
+#### Admin can manage Products
   * View all Products
   * Add a Product
   * Edit a Product
   * Delete a Product
 
 
-- Admin can manage Orders
+#### Admin can manage Orders
   * View all Orders
   * Add an Order
+    * Enter Customer
+    * Add Product
   * Edit an Order
+    * Add Product
+    * Remove Product
   * Delete an Order
 
 
 ### ORDERS:
 - Order number
+- Customer
 - List of Products ordered
 - Quantities for each Product ordered
 - Subtotal for each Product ordered
