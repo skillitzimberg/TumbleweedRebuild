@@ -13,6 +13,7 @@ function Admin() {
         <Customers />
         <Locations />
         <Orders />
+        <Products />
       </div>
     </div>
   );
