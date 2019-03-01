@@ -27,11 +27,10 @@ function NewLocationForm(){
     //   dateAdded: new Moment(),
     // };
     // dispatch(action);
-    _firstName.value = '';
-    _lastName.value = '';
-    _phone.value = '';
-    _email.value = '';
+    _name.value = '';
+    _streetAddress.value = '';
     _postalCode.value = '';
+    _description.value = '';
   }
 
   return (
