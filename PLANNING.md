@@ -23,11 +23,13 @@ This project is intended to be a website where customers can place orders for pi
   * View all Products
   * Add a Product
     * Enter Name
+    * Enter Type
     * Enter Ingredients
     * Enter Description
     * Enter Price
   * Edit a Product
     * Enter Name
+    * Enter Type
     * Enter Ingredients
     * Enter Description
     * Enter Price
