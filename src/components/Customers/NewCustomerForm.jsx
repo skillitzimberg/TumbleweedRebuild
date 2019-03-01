@@ -45,7 +45,7 @@ function NewCustomerForm(){
         <input
           type='text'
           id='lastName'
-          placeholder='last Name'
+          placeholder='Last Name'
           ref={(input) => {_lastName = input;}}/>
         <input
           type='text'

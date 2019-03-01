@@ -6,11 +6,10 @@ import Moment from 'moment';
 
 function NewLocationForm(){
 
-  let _firstName = null;
-  let _lastName = null;
-  let _phone = null;
-  let _email = null;
+  let _name = null;
+  let _streetAddress = null;
   let _postalCode = null;
+  let _description = null;
 
   function handleNewLocationFormSubmission(event) {
     event.preventDefault();
@@ -44,7 +43,7 @@ function NewLocationForm(){
         <input
           type='text'
           id='streetAddress'
-          placeholder='last Name'
+          placeholder='Market Address'
           ref={(input) => {_streetAddress = input;}}/>
           <input
             type='text'
