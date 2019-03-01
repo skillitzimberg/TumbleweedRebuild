@@ -13,7 +13,6 @@ function App() {
   return (
     <div>
       <Header />
-      <p>App Works</p>
       <Switch>
         <Route exact path="/admin" component={Admin} />
         <Route exact path="/admin/customers" component={Customers} />
