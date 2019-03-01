@@ -22,7 +22,15 @@ This project is intended to be a website where customers can place orders for pi
 #### Admin can manage Products
   * View all Products
   * Add a Product
+    * Enter Name
+    * Enter Ingredients
+    * Enter Description
+    * Enter Price
   * Edit a Product
+    * Enter Name
+    * Enter Ingredients
+    * Enter Description
+    * Enter Price
   * Delete a Product
 
 
