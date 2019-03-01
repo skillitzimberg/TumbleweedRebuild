@@ -89,3 +89,4 @@ Orders will display the following . . .
 - 10:45 AM: using draw.io to layout Component Tree
 - 11:15 AM: using draw.io to layout Component Tree
 - 12:00 PM: reconfiguring Component Tree
+- 12:15 PM: reconfiguring Component Tree
