@@ -80,3 +80,7 @@ Orders will display the following . . .
   * Order total
   * Pickup Location
   * Scheduled pickup date & time
+
+
+## Study/Research Work Log
+- 9:30 AM: using draw.io to layout Admin homepage
