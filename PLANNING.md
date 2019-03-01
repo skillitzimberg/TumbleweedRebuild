@@ -24,14 +24,30 @@ This project is intended to be a website where customers can place orders for pi
   * Delete an Order
 
 
-  ### ORDERS:
-  Orders will display the following . . .
-  - Customer
-    * Name
-    * Phone
-    * Email
+### ORDERS:
+- Order number
+- List of Products ordered
+- Quantities for each Product ordered
+- Subtotal for each Product ordered
+- Order total
+- Status: pending/complete
 
-  - Products
-    * Name
-    * Price
-    * Email
+
+Orders will display the following . . .
+- Customer
+  * Name
+  * Phone
+  * Email
+
+
+- Products
+  * Name
+  * Price
+  * Quantity ordered
+  * SubTotal
+
+
+- Order
+  * Order total
+  * Pickup location
+  * Pickup date & time
