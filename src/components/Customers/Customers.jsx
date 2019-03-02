@@ -7,7 +7,7 @@ function Customers(props) {
   return (
     <div>
       <div className="container">
-        <p>Customers Works</p>
+        <p>Customers</p>
         <CustomerList customers={props.customers}/>
         <NewCustomerForm />
       </div>

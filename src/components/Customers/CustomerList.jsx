@@ -6,7 +6,6 @@ function CustomerList(props) {
   return (
     <div>
       <div className="container">
-        <p>CustomerList Works</p>
         {props.customers.map((customer) =>
           <Customer
             firstName={customer.firstName}
