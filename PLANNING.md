@@ -148,3 +148,4 @@ customers: {
 - 11:15 AM: using draw.io to layout Component Tree
 - 12:00 PM: reconfiguring Component Tree
 - 12:15 PM: reconfiguring Component Tree
+- 16:45 PM: reading Epicodus Redux curriculum in anticipation of refactoring Customers.
