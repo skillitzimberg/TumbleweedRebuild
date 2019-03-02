@@ -1,6 +1,10 @@
 # PLANNING
 This project is intended to be a website where customers can place orders for pick up at markets where Tumbleweed Bakehouse has booths. As of this writing, the project will focus on the Admin side. It will allow admin users to view and manage customers, orders, and products.
 
+**[Component Tree](#component-tree)**<br>
+**[Specifications](#specifications)**<br>
+**[State](#state)**<br>
+
 ## Component Tree
 ![](ComponentTree.png)
 
@@ -62,6 +66,7 @@ This project is intended to be a website where customers can place orders for pi
     * Edit Street Address & Postal code
   * Delete a Location
 
+
 ### ORDERS:
 - Order number
 - Customer
@@ -93,6 +98,8 @@ Orders will display the following . . .
   * Order total
   * Pickup Location
   * Scheduled pickup date & time
+
+## State
 
 
 ## Study/Research Work Log
