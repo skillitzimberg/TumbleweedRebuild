@@ -109,7 +109,9 @@ customers: {
     email: string,
     postalCode: string,
   }
+```
 
+```
   products: {
     name: string,
     type: string,
@@ -117,7 +119,9 @@ customers: {
     description: string,
     price: number,
   }
+```
 
+```
   orders: {
     orderNumber: number,
     orderDateTime: date,
@@ -131,7 +135,9 @@ customers: {
       }
     ],
   }
+```
 
+```
   locations: {
     name: string,
     description: string,
@@ -140,6 +146,7 @@ customers: {
   }
 
 ```
+
 ## Study/Research Work Log
 - 9:30 AM: using draw.io to layout Admin homepage
 - 9:45 AM: using draw.io to layout Admin homepage
