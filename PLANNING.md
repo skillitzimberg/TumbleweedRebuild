@@ -101,6 +101,7 @@ Orders will display the following . . .
   * Scheduled pickup date & time
 
 ## State
+```
 customers: {
     firstName: string,
     lastName: string,
@@ -118,7 +119,7 @@ customers: {
   }
 
   orders: {
-    orderNumber: orderNumber,
+    orderNumber: number,
     orderDateTime: date,
     scheduledPickupDate: date,
     scheduledPickupLocation: string,
@@ -138,6 +139,7 @@ customers: {
     postalCode: string,
   }
 
+```
 ## Study/Research Work Log
 - 9:30 AM: using draw.io to layout Admin homepage
 - 9:45 AM: using draw.io to layout Admin homepage
