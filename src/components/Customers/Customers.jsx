@@ -1,18 +1,22 @@
 import React from "react";
-import Customer from "./../Customers/Customer";
+import PropTypes from "prop-types";
+import CustomerList from "./../Customers/CustomerList";
 import NewCustomerForm from "./../Customers/NewCustomerForm";
-// import PropTypes from "prop-types";
 
-function Customers() {
+function Customers(props) {
   return (
     <div>
       <div className="container">
         <p>Customers Works</p>
-        <Customer />
+        <CustomerList customers={props.customers}/>
         <NewCustomerForm />
       </div>
     </div>
   );
 }
+
+Customers.propTypes = {
+  customers: PropTypes.array
+};
 
 export default Customers;
