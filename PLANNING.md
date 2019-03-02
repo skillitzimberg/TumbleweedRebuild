@@ -71,6 +71,7 @@ This project is intended to be a website where customers can place orders for pi
 - Order number
 - Customer
 - Pickup Location
+- Date & Time Order was placed
 - Scheduled Pickup Date
 - Date the Order was Picked up
 - List of Products ordered
@@ -100,7 +101,42 @@ Orders will display the following . . .
   * Scheduled pickup date & time
 
 ## State
+customers: {
+    firstName: string,
+    lastName: string,
+    phone: string,
+    email: string,
+    postalCode: string,
+  }
 
+  products: {
+    name: string,
+    type: string,
+    ingredients: string,
+    description: string,
+    price: number,
+  }
+
+  orders: {
+    orderNumber: orderNumber,
+    orderDateTime: date,
+    scheduledPickupDate: date,
+    scheduledPickupLocation: string,
+    orderStatus: bool,
+    productsOrdered: [
+      {
+        productId: string,
+        quantityOrdered: number,
+      }
+    ],
+  }
+
+  locations: {
+    name: string,
+    description: string,
+    streetAddress: string,
+    postalCode: string,
+  }
 
 ## Study/Research Work Log
 - 9:30 AM: using draw.io to layout Admin homepage
