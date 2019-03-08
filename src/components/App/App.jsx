@@ -7,6 +7,7 @@ import Products from "./../Products/Products";
 import Orders from "./../Orders/Orders";
 import Locations from "./../Locations/Locations";
 import { Switch, Route } from "react-router-dom";
+import "../../assets/css/globalStyles.css";
 
 function App() {
 
