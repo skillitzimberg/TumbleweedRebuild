@@ -167,6 +167,8 @@ Orders will display the following . . .
   * Pickup Location
   * Scheduled pickup date & time
 
+## ADMIN LAYOUT
+![](admin-layout.jpg)
 
 ## Study/Research Work Log 3/1/2019
 - 9:30 AM: using draw.io to layout Admin homepage
