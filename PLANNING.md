@@ -186,7 +186,7 @@ Orders will display the following . . .
 ![](docs_img/customers.jpg)
 
 ### NEW CUSTOMER
-![](docs_img/new-customers.jpg)
+![](docs_img/new-customer.jpg)
 
 ### NEW PRODUCT
 ![](docs_img/new-product.jpg)
