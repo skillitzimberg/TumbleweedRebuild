@@ -163,6 +163,7 @@ Orders will display the following . . .
 
 
 - Order
+  * Order number
   * Order total
   * Pickup Location
   * Scheduled pickup date & time
