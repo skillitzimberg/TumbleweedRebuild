@@ -69,7 +69,62 @@ Includes visual representation of the capstone's planned layout/appearance.
   * Delete a Location
 
 
-### ORDERS:
+## State-lifting
+details how state will be structured and lifted  
+Admin component will own state. State will be 4 arrays, one each for Customers, Locations, Orders, and Products. These will be arrays of objects. Each object will be structured as defined in the [following section](#state).
+
+
+## State
+Lists all planned state   
+
+```
+customer: {
+    firstName: string,
+    lastName: string,
+    phone: string,
+    email: string,
+    postalCode: string,
+  }
+```
+
+```
+  product: {
+    name: string,
+    type: string,
+    ingredients: string,
+    description: string,
+    price: number,
+  }
+```
+
+```
+  order: {
+    orderNumber: string,
+    customerId, string,
+    orderDateTime: date,
+    scheduledPickupDate: date,
+    scheduledPickupLocation: string,
+    orderStatus: bool,
+    productsOrdered: [
+      {
+        productId: string,
+        quantityOrdered: number,
+      }
+    ],
+  }
+```
+
+```
+  location: {
+    name: string,
+    description: string,
+    streetAddress: string,
+    postalCode: string,
+  }
+
+```
+
+### ORDER Component:
 - Order number
 - Customer
 - Pickup Location
@@ -102,60 +157,8 @@ Orders will display the following . . .
   * Pickup Location
   * Scheduled pickup date & time
 
-## State
-Lists all planned state   
 
-```
-customer: {
-    firstName: string,
-    lastName: string,
-    phone: string,
-    email: string,
-    postalCode: string,
-  }
-```
-
-```
-  product: {
-    name: string,
-    type: string,
-    ingredients: string,
-    description: string,
-    price: number,
-  }
-```
-
-```
-  order: {
-    orderNumber: number,
-    orderDateTime: date,
-    scheduledPickupDate: date,
-    scheduledPickupLocation: string,
-    orderStatus: bool,
-    productsOrdered: [
-      {
-        productId: string,
-        quantityOrdered: number,
-      }
-    ],
-  }
-```
-
-```
-  location: {
-    name: string,
-    description: string,
-    streetAddress: string,
-    postalCode: string,
-  }
-
-```
-
-## State-lifting
-details how state will be structured and lifted  
-
-
-## Study/Research Work Log
+## Study/Research Work Log 3/1/2019
 - 9:30 AM: using draw.io to layout Admin homepage
 - 9:45 AM: using draw.io to layout Admin homepage
 - 10:30 AM: using draw.io to layout Component Tree
@@ -164,3 +167,5 @@ details how state will be structured and lifted
 - 12:00 PM: reconfiguring Component Tree
 - 12:15 PM: reconfiguring Component Tree
 - 16:45 PM: reading Epicodus Redux curriculum in anticipation of refactoring Customers.
+
+## Study/Research Work Log 3/8/2019
