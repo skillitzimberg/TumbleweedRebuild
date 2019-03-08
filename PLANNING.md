@@ -71,12 +71,15 @@ Includes visual representation of the capstone's planned layout/appearance.
 
 ## State-lifting
 details how state will be structured and lifted  
-Admin component will own state. State will be 4 arrays, one each for Customers, Locations, Orders, and Products. These will be arrays of objects. Each object will be structured as defined in the [following section](#state).
+Admin component will own state. State will be 4 arrays, one each for Customers, Locations, Orders, and Products. These will be arrays of objects. Each object will be structured as defined in the [following section](#state).  
+
+Customers, Locations, Orders, and Products will each have a form to take user input and callback functions passed down from Admin as props. These callback will lift that data to Admin. Admin will update state accordingly.
 
 
 ## State
 Lists all planned state   
 
+**CUSTOMER**
 ```
 customer: {
     firstName: string,
@@ -87,16 +90,18 @@ customer: {
   }
 ```
 
+**LOCATION**
 ```
-  product: {
+  location: {
     name: string,
-    type: string,
-    ingredients: string,
     description: string,
-    price: number,
+    streetAddress: string,
+    postalCode: string,
   }
+
 ```
 
+**ORDER**
 ```
   order: {
     orderNumber: string,
@@ -114,17 +119,22 @@ customer: {
   }
 ```
 
+**PRODUCT**
 ```
-  location: {
+  product: {
     name: string,
+    type: string,
+    ingredients: string,
     description: string,
-    streetAddress: string,
-    postalCode: string,
+    price: number,
   }
-
 ```
 
 ### ORDER Component:
+This component will need the following data to display an Order:
+
+
+
 - Order number
 - Customer
 - Pickup Location
