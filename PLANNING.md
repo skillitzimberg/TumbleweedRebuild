@@ -133,7 +133,7 @@ customer: {
 ### ORDER Component:
 This component will need the following data to display an Order:
 
-
+Because an Order will have customerId and an array that includes productId's, I can build logic to have Admin pass down the needed data to Orders.
 
 - Order number
 - Customer
