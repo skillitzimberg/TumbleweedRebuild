@@ -179,3 +179,4 @@ Orders will display the following . . .
 - 16:45 PM: reading Epicodus Redux curriculum in anticipation of refactoring Customers.
 
 ## Study/Research Work Log 3/8/2019
+- 08:05 AM: Planning path: /admin layout
