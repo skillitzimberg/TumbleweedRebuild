@@ -8,7 +8,7 @@ Includes visual representation of the capstone's planned layout/appearance.
 **[State](#state)**<br>
 
 ## Component Tree
-![](ComponentTree.png)
+![](docs_img/ComponentTree.png)
 
 ## Specifications
 
@@ -168,8 +168,35 @@ Orders will display the following . . .
   * Pickup Location
   * Scheduled pickup date & time
 
-## ADMIN LAYOUT
-![](admin-layout.jpg)
+## VEIWS
+
+### ADMIN
+![](docs_img/admin-layout.jpg)
+
+### CUSTOMER
+![](docs_img/customer.jpg)
+
+### ORDER
+![](docs_img/order.jpg)
+
+### ORDERS
+![](docs_img/orders.jpg)
+
+### CUSTOMERS
+![](docs_img/customers.jpg)
+
+### NEW CUSTOMER
+![](docs_img/new-customers.jpg)
+
+### NEW PRODUCT
+![](docs_img/new-product.jpg)
+
+### PRODUCT
+![](docs_img/product.jpg)
+
+### NEW LOCATION
+![](docs_img/new-location.jpg)
+
 
 ## Study/Research Work Log 3/1/2019
 - 9:30 AM: using draw.io to layout Admin homepage
