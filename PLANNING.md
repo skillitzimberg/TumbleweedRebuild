@@ -1,6 +1,8 @@
 # PLANNING
 This project is intended to be a website where customers can place orders for pick up at markets where Tumbleweed Bakehouse has booths. As of this writing, the project will focus on the Admin side. It will allow admin users to view and manage customers, orders, and products.
 
+Includes visual representation of the capstone's planned layout/appearance.
+
 **[Component Tree](#component-tree)**<br>
 **[Specifications](#specifications)**<br>
 **[State](#state)**<br>
@@ -101,8 +103,10 @@ Orders will display the following . . .
   * Scheduled pickup date & time
 
 ## State
+Lists all planned state   
+
 ```
-customers: {
+customer: {
     firstName: string,
     lastName: string,
     phone: string,
@@ -112,7 +116,7 @@ customers: {
 ```
 
 ```
-  products: {
+  product: {
     name: string,
     type: string,
     ingredients: string,
@@ -122,7 +126,7 @@ customers: {
 ```
 
 ```
-  orders: {
+  order: {
     orderNumber: number,
     orderDateTime: date,
     scheduledPickupDate: date,
@@ -138,7 +142,7 @@ customers: {
 ```
 
 ```
-  locations: {
+  location: {
     name: string,
     description: string,
     streetAddress: string,
@@ -146,6 +150,10 @@ customers: {
   }
 
 ```
+
+## State-lifting
+details how state will be structured and lifted  
+
 
 ## Study/Research Work Log
 - 9:30 AM: using draw.io to layout Admin homepage
