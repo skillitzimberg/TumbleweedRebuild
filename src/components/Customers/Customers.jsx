@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import CustomerList from "./../Customers/CustomerList";
 import NewCustomerForm from "./../Customers/NewCustomerForm";
+import "./customerStyles.css";
 
 function Customers(props) {
   return (
