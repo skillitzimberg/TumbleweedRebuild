@@ -7,7 +7,7 @@ import "./customerStyles.css";
 function Customers(props) {
   return (
     <div>
-      <div className="container">
+      <div className="customers">
         <p>Customers</p>
         <CustomerList customers={props.customers}/>
         <NewCustomerForm />
