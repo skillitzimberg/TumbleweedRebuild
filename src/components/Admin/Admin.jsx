@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Customers from "./../Customers/Customers";
 import Locations from "./../Locations/Locations";
 import Orders from "./../Orders/Orders";
@@ -8,15 +9,14 @@ import { masterCustomerList } from "./masterCustomerList";
 
 function Admin() {
   return (
-    <div>
+    <Router>
       <div className="container">
-        <p>Admin Works</p>
         <Customers customers={masterCustomerList}/>
         <Locations />
         <Products />
         <Orders />
       </div>
-    </div>
+    </Router>
   );
 }
 
