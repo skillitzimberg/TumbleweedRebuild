@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 // import { connect } from 'react-redux';
 
 function NewCustomerForm(props){
-  console.log("New Customer Form", props);
   let _firstName = null;
   let _lastName = null;
   let _phone = null;
@@ -15,7 +14,7 @@ function NewCustomerForm(props){
 
   function handleNewCustomerFormSubmission(event) {
     event.preventDefault();
-    
+
     props.onNewCustomerCreation(
       {
         firstName: _firstName.value,
