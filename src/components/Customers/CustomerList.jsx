@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Customer from "./../Customers/Customer";
 import { v4 } from "uuid";
@@ -9,11 +10,7 @@ function CustomerList(props) {
       <div className="container">
         {props.customers.map((customer) =>
           <Customer
-            firstName={customer.firstName}
-            lastName={customer.lastName}
-            phone={customer.phone}
-            email={customer.email}
-            postalCode={customer.postalCode}
+            customer={customer}
             key={v4()}
           />
         )}

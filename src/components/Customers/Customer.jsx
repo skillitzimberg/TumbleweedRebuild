@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Customer(props) {
+function Customer({ customer }) {
   return (
     <div>
       <div className="container">
-        <h3>{props.firstName} {props.lastName}</h3>
-        <p>{props.phone}</p>
-        <p>{props.email}</p>
-        <p>{props.postalCode}</p>
+        <h3>{customer.firstName} {customer.lastName}</h3>
+        <p>{customer.phone}</p>
+        <p>{customer.email}</p>
+        <p>{customer.postalCode}</p>
       </div>
     </div>
   );
