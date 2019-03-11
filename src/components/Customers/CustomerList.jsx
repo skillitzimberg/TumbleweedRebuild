@@ -6,6 +6,15 @@ import { v4 } from "uuid";
 
 function CustomerList(props) {
   console.log("customer list", props);
+
+  function findCustomer(id) {
+    for (let i = 0, i < props.customers.length, i++) {
+      if (id === props.customers[i].id) {
+        return props.customers[i];
+      }
+    }
+  }
+  
   return (
       <div className="container">
         {props.customers.map((customer) =>
