@@ -6,7 +6,6 @@ import Products from "./../Products/Products";
 import PropTypes from "prop-types";
 
 function Admin(props) {
-  console.log("admin", props);
   return (
     <div className="container">
       <Customers customers={props.customers}/>
@@ -19,6 +18,6 @@ function Admin(props) {
 
 Admin.propTypes = {
   customers: PropTypes.array
-}
+};
 
 export default Admin;

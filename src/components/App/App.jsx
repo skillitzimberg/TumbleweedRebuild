@@ -7,8 +7,10 @@ import Orders from "./../Orders/Orders";
 import Products from "./../Products/Products";
 import { Route, Switch } from "react-router-dom";
 import { masterCustomerList } from "./masterCustomerList";
+import Customer from "./../Customers/Customer";
 
 function App() {
+
   return (
     <div>
       <Header />
@@ -24,7 +26,10 @@ function App() {
           render={(props) => <Customers {...props}
             customers={masterCustomerList}/>}
         />
-
+        <Route
+          exact path={`/admin/customers/:customerId`}
+          render={ (props) => <Customer {...props} customers={masterCustomerList} /> }
+        />
         <Route exact path="/admin/locations" component={Locations} />
         <Route exact path="/admin/orders" component={Orders} />
         <Route exact path="/admin/products" component={Products} />

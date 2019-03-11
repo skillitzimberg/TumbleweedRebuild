@@ -2,14 +2,24 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Customer(props) {
-  // console.log("customer", props);
+  function findCustomer(id) {
+    for (let i = 0; i < props.customers.length; i++) {
+      if (parseInt(id) === props.customers[i].id) {
+        console.log(props.customers[i]);
+        return props.customers[i];
+      }
+    }
+  }
+
+  const customer = findCustomer(props.match.params.customerId);
+
   return (
     <div>
       <div className="container">
-        <h3>{props.customer.firstName} {props.customer.lastName}</h3>
-        <p>{props.customer.phone}</p>
-        <p>{props.customer.email}</p>
-        <p>{props.customer.postalCode}</p>
+        <h3>{customer.firstName} {customer.lastName}</h3>
+        <p>{customer.phone}</p>
+        <p>{customer.email}</p>
+        <p>{customer.postalCode}</p>
       </div>
     </div>
   );

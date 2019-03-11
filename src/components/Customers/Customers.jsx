@@ -5,12 +5,11 @@ import NewCustomerForm from "./../Customers/NewCustomerForm";
 import "./customerStyles.css";
 
 function Customers(props) {
-  console.log("customers", props);
   return (
     <div>
       <div className="customers">
         <p>Customers</p>
-        <CustomerList customers={props.customers}/>
+        <CustomerList props={props} />
         <NewCustomerForm />
       </div>
     </div>
