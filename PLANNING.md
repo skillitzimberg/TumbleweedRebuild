@@ -211,3 +211,6 @@ Orders will display the following . . .
 ## Study/Research Work Log 3/8/2019
 - 08:05 AM: Planning path: /admin layout
 - 016:03 PM: Researching hiding child components & revealing them depending on routes.
+
+## Study/Research Work Log 3/11/2019
+- 09:30 AM: Researching routing for displaying something like: /admin/customers/:customerId.
