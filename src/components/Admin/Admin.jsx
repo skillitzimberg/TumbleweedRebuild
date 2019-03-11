@@ -9,7 +9,7 @@ function Admin(props) {
   return (
     <div className="container">
       <Customers customers={props.customers}/>
-      <Locations />
+      <Locations onNewCustomerCreation={props.onNewCustomerCreation} />
       <Products />
       <Orders />
     </div>
@@ -17,7 +17,8 @@ function Admin(props) {
 }
 
 Admin.propTypes = {
-  customers: PropTypes.array
+  customers: PropTypes.array,
+  onNewCustomerCreation: PropTypes.func
 };
 
 export default Admin;

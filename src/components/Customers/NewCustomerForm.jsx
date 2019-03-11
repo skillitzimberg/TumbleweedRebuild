@@ -15,6 +15,7 @@ function NewCustomerForm(){
   function handleNewCustomerFormSubmission(event) {
     event.preventDefault();
     console.log("New Customer Form Submitted");
+    props.onNewCustomerCreation({ firstName: _firstName.value, lastName: _lastName.value, phone: _phone.value, email: _email.value, postalCode: _postalCode })
     // const { dispatch } = props;
     // const action = {
     //   type: 'ADD_TICKET',
