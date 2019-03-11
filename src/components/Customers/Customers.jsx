@@ -9,7 +9,7 @@ function Customers(props) {
     <div>
       <div className="customers">
         <p>Customers</p>
-        <CustomerList props={props} />
+        <CustomerList customers={props.customers} />
         <NewCustomerForm onNewCustomerCreation={props.onAddingNewCustomer} />
       </div>
     </div>
@@ -18,6 +18,7 @@ function Customers(props) {
 
 Customers.propTypes = {
   customers: PropTypes.array,
+  onAddingNewCustomer: PropTypes.func,
   onNewCustomerCreation: PropTypes.func
 };
 

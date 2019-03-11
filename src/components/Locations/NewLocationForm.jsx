@@ -13,7 +13,6 @@ function NewLocationForm(){
 
   function handleNewLocationFormSubmission(event) {
     event.preventDefault();
-    console.log("New Location Form Submitted");
     // const { dispatch } = props;
     // const action = {
     //   type: 'ADD_TICKET',

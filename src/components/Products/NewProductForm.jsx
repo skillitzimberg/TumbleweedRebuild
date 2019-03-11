@@ -14,7 +14,6 @@ function NewProductForm(){
 
   function handleNewProductFormSubmission(event) {
     event.preventDefault();
-    console.log("New Product Form Submitted");
     // const { dispatch } = props;
     // const action = {
     //   type: 'ADD_TICKET',

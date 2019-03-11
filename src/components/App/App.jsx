@@ -20,7 +20,7 @@ class App extends React.Component {
     this.handleAddingNewCustomer = this.handleAddingNewCustomer.bind(this);
   }
 
-render() {
+  render() {
     return (
       <div>
         <Header />
@@ -28,17 +28,17 @@ render() {
           <Route
             exact path="/admin"
             render={(props) => <Admin {...props}
-            customers={this.state.customerList} onAddingNewCustomer={this.handleAddingNewCustomer}/>}
+              customers={this.state.customerList} onAddingNewCustomer={this.handleAddingNewCustomer}/>}
           />
 
           <Route
             exact path="/admin/customers"
             render={(props) => <Customers {...props}
-            customers={this.state.customerList} onAddingNewCustomer={this.handleAddingNewCustomer}/>}
+              customers={this.state.customerList} onAddingNewCustomer={this.handleAddingNewCustomer}/>}
           />
 
           <Route
-            exact path={`/admin/customers/:customerId`}
+            exact path={"/admin/customers/:customerId"}
             render={ (props) => <Customer {...props} customers={this.state.customerList} /> }
           />
 

@@ -12,7 +12,6 @@ function NewOrderForm(){
 
   function handleNewOrderFormSubmission(event) {
     event.preventDefault();
-    console.log("New Order Form Submitted");
     // const { dispatch } = props;
     // const action = {
     //   type: 'ADD_TICKET',

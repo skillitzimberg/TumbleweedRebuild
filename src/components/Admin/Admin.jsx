@@ -21,7 +21,7 @@ function Admin(props) {
 
 Admin.propTypes = {
   customers: PropTypes.array,
-  onNewCustomerCreation: PropTypes.func
+  onAddingNewCustomer: PropTypes.func
 };
 
 export default Admin;
