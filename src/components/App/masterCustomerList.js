@@ -1,3 +1,4 @@
+import { v4 } from "uuid";
 export const masterCustomerList = [
   {
     firstName: "Scott",
@@ -5,7 +6,7 @@ export const masterCustomerList = [
     phone: "503.890.5118",
     email: "commandinghands@gmail.com",
     postalCode: "97211",
-    id: 1
+    id: v4()
   },
   {
     firstName: "Millicent",
@@ -13,7 +14,7 @@ export const masterCustomerList = [
     phone: "971.276.9712",
     email: "anemail@emailorg",
     postalCode: "97123",
-    id: 2
+    id: v4()
   },
   {
     firstName: "Wayne",
@@ -21,6 +22,6 @@ export const masterCustomerList = [
     phone: "435.912.4083",
     email: "bitcoyne@me.com",
     postalCode: "56812",
-    id: 3
+    id: v4()
   },
 ];

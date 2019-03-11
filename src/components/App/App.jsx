@@ -8,6 +8,7 @@ import Products from "./../Products/Products";
 import { Route, Switch } from "react-router-dom";
 import { masterCustomerList } from "./masterCustomerList";
 import Customer from "./../Customers/Customer";
+import { v4 } from "uuid";
 
 class App extends React.Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class App extends React.Component {
 
   handleAddingNewCustomer(newCustomer) {
     let newCustomerList = this.state.customerList.slice();
-    newCustomer.id = newCustomerList.length + 1;
+    newCustomer.id = v4();
     newCustomerList.push(newCustomer);
     this.setState({customerList: newCustomerList});
   }
