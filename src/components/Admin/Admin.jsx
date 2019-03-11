@@ -6,9 +6,10 @@ import Products from "./../Products/Products";
 import PropTypes from "prop-types";
 
 function Admin(props) {
+  console.log("admin", props);
   return (
     <div className="container">
-      <Customers customers={props.customers}/>
+      <Customers customers={props.customers} match={props.match}/>
       <Locations />
       <Products />
       <Orders />

@@ -13,8 +13,18 @@ function App() {
     <div>
       <Header />
       <Switch>
-        <Route exact path="/admin" render={(props) => <Admin {...props} customers={masterCustomerList}/>} />
-        <Route exact path="/admin/customers" render={(props) => <Customers {...props} customers={masterCustomerList}/>} />
+        <Route
+          exact path="/admin"
+          render={(props) => <Admin {...props}
+            customers={masterCustomerList}/>}
+        />
+
+        <Route
+          exact path="/admin/customers"
+          render={(props) => <Customers {...props}
+            customers={masterCustomerList}/>}
+        />
+
         <Route exact path="/admin/locations" component={Locations} />
         <Route exact path="/admin/orders" component={Orders} />
         <Route exact path="/admin/products" component={Products} />
