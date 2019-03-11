@@ -9,7 +9,7 @@ function Admin(props) {
   console.log("admin", props);
   return (
     <div className="container">
-      <Customers customers={props.customers} match={props.match}/>
+      <Customers customers={props.customers}/>
       <Locations />
       <Products />
       <Orders />

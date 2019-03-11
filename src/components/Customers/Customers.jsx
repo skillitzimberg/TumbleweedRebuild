@@ -10,7 +10,7 @@ function Customers(props) {
     <div>
       <div className="customers">
         <p>Customers</p>
-        <CustomerList customers={props.customers} match={props.match}/>
+        <CustomerList customers={props.customers}/>
         <NewCustomerForm />
       </div>
     </div>
