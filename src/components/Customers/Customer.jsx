@@ -5,7 +5,6 @@ function Customer(props) {
   function findCustomer(id) {
     for (let i = 0; i < props.customers.length; i++) {
       if (parseInt(id) === props.customers[i].id) {
-        console.log(props.customers[i]);
         return props.customers[i];
       }
     }
