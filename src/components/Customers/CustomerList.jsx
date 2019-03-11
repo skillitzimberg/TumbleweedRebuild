@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Customer from "./../Customers/Customer";
-import { v4 } from 'uuid';
+import { v4 } from "uuid";
 
 function CustomerList(props) {
   return (

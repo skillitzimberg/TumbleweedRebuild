@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // import { v4 } from 'uuid';
 // import Moment from 'moment';
 // import c from './../constants';
@@ -14,7 +14,7 @@ function NewProductForm(){
 
   function handleNewProductFormSubmission(event) {
     event.preventDefault();
-    console.log('New Product Form Submitted')
+    console.log("New Product Form Submitted");
     // const { dispatch } = props;
     // const action = {
     //   type: 'ADD_TICKET',
@@ -27,11 +27,11 @@ function NewProductForm(){
     //   dateAdded: new Moment(),
     // };
     // dispatch(action);
-    _name.value = '';
-    _type.value = '';
-    _ingredients.value = '';
-    _description.value = '';
-    _price.value = '';
+    _name.value = "";
+    _type.value = "";
+    _ingredients.value = "";
+    _description.value = "";
+    _price.value = "";
   }
 
   return (
@@ -52,15 +52,15 @@ function NewProductForm(){
           id='price'
           placeholder='Price'
           ref={(input) => {_price = input;}}/>
-          <textarea
-            id='ingredients'
-            placeholder='Ingredients'
-            ref={(textarea) => {_ingredients = textarea;}}/>
-          <textarea
-            id='description'
-            placeholder='Description'
-            ref={(textarea) => {_description = textarea;}}/>
-          <button type='submit'>Add to Products</button>
+        <textarea
+          id='ingredients'
+          placeholder='Ingredients'
+          ref={(textarea) => {_ingredients = textarea;}}/>
+        <textarea
+          id='description'
+          placeholder='Description'
+          ref={(textarea) => {_description = textarea;}}/>
+        <button type='submit'>Add to Products</button>
       </form>
     </div>
   );

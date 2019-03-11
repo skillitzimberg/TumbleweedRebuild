@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // import { v4 } from 'uuid';
 // import Moment from 'moment';
 // import c from './../constants';
@@ -14,7 +14,7 @@ function NewCustomerForm(){
 
   function handleNewCustomerFormSubmission(event) {
     event.preventDefault();
-    console.log('New Customer Form Submitted')
+    console.log("New Customer Form Submitted");
     // const { dispatch } = props;
     // const action = {
     //   type: 'ADD_TICKET',
@@ -27,11 +27,11 @@ function NewCustomerForm(){
     //   dateAdded: new Moment(),
     // };
     // dispatch(action);
-    _firstName.value = '';
-    _lastName.value = '';
-    _phone.value = '';
-    _email.value = '';
-    _postalCode.value = '';
+    _firstName.value = "";
+    _lastName.value = "";
+    _phone.value = "";
+    _email.value = "";
+    _postalCode.value = "";
   }
 
   return (

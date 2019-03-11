@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // import { v4 } from 'uuid';
 // import Moment from 'moment';
 // import c from './../constants';
@@ -12,7 +12,7 @@ function NewOrderForm(){
 
   function handleNewOrderFormSubmission(event) {
     event.preventDefault();
-    console.log('New Order Form Submitted')
+    console.log("New Order Form Submitted");
     // const { dispatch } = props;
     // const action = {
     //   type: 'ADD_TICKET',
@@ -25,9 +25,9 @@ function NewOrderForm(){
     //   dateAdded: new Moment(),
     // };
     // dispatch(action);
-    _customer.value = '';
-    _pickupLocation.value = '';
-    _pickupDate.value = '';
+    _customer.value = "";
+    _pickupLocation.value = "";
+    _pickupDate.value = "";
   }
 
   // - Order number
