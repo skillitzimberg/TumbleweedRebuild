@@ -14,7 +14,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      customerList: []
+      customerList: masterCustomerList
     };
 
     this.handleAddingNewCustomer = this.handleAddingNewCustomer.bind(this);
