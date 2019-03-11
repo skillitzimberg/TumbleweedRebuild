@@ -10,14 +10,15 @@ function Customers(props) {
       <div className="customers">
         <p>Customers</p>
         <CustomerList props={props} />
-        <NewCustomerForm onNewCustomerCreation={props.onNewCustomerCreation} />
+        <NewCustomerForm onNewCustomerCreation={props.onAddingNewCustomer} />
       </div>
     </div>
   );
 }
 
 Customers.propTypes = {
-  customers: PropTypes.array
+  customers: PropTypes.array,
+  onNewCustomerCreation: PropTypes.func
 };
 
 export default Customers;

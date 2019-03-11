@@ -10,7 +10,7 @@ function Admin(props) {
     <div className="container">
       <Customers
         customers={props.customers}
-        onNewCustomerCreation={props.onAddingNewCustomer}
+        onAddingNewCustomer={props.onAddingNewCustomer}
       />
       <Locations />
       <Products />

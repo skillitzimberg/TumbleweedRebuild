@@ -34,7 +34,7 @@ render() {
           <Route
             exact path="/admin/customers"
             render={(props) => <Customers {...props}
-            customers={this.state.customerList}/>}
+            customers={this.state.customerList} onAddingNewCustomer={this.handleAddingNewCustomer}/>}
           />
 
           <Route
@@ -52,6 +52,7 @@ render() {
 
   handleAddingNewCustomer(newCustomer) {
     let newCustomerList = this.state.customerList.slice();
+    newCustomer.id = newCustomerList.length + 1;
     newCustomerList.push(newCustomer);
     this.setState({customerList: newCustomerList});
   }
