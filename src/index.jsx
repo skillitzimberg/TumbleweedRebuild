@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App/App";
 import { AppContainer } from "react-hot-loader";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 // import { createStore } from "redux";
 // import { Provider } from "react-redux";
 
@@ -11,9 +11,9 @@ import { BrowserRouter } from "react-router-dom";
 const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
-      <BrowserRouter>
+      <HashRouter>
         <Component/>
-      </BrowserRouter>
+      </HashRouter>
     </AppContainer>,
     document.getElementById("react-app-root")
   );
