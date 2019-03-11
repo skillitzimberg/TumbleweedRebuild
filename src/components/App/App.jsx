@@ -12,6 +12,10 @@ import Customer from "./../Customers/Customer";
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      customerList: masterCustomerList
+    }
   }
 
 render() {
@@ -22,17 +26,17 @@ render() {
           <Route
             exact path="/admin"
             render={(props) => <Admin {...props}
-            customers={masterCustomerList}/>}
+            customers={this.state.customerList}/>}
             />
 
           <Route
             exact path="/admin/customers"
             render={(props) => <Customers {...props}
-            customers={masterCustomerList}/>}
+            customers={this.state.customerList}/>}
             />
           <Route
             exact path={`/admin/customers/:customerId`}
-            render={ (props) => <Customer {...props} customers={masterCustomerList} /> }
+            render={ (props) => <Customer {...props} customers={this.state.customerList} /> }
             />
           <Route exact path="/admin/locations" component={Locations} />
           <Route exact path="/admin/orders" component={Orders} />
