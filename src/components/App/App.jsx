@@ -9,33 +9,38 @@ import { Route, Switch } from "react-router-dom";
 import { masterCustomerList } from "./masterCustomerList";
 import Customer from "./../Customers/Customer";
 
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  return (
-    <div>
-      <Header />
-      <Switch>
-        <Route
-          exact path="/admin"
-          render={(props) => <Admin {...props}
+render() {
+    return (
+      <div>
+        <Header />
+        <Switch>
+          <Route
+            exact path="/admin"
+            render={(props) => <Admin {...props}
             customers={masterCustomerList}/>}
-        />
+            />
 
-        <Route
-          exact path="/admin/customers"
-          render={(props) => <Customers {...props}
+          <Route
+            exact path="/admin/customers"
+            render={(props) => <Customers {...props}
             customers={masterCustomerList}/>}
-        />
-        <Route
-          exact path={`/admin/customers/:customerId`}
-          render={ (props) => <Customer {...props} customers={masterCustomerList} /> }
-        />
-        <Route exact path="/admin/locations" component={Locations} />
-        <Route exact path="/admin/orders" component={Orders} />
-        <Route exact path="/admin/products" component={Products} />
-      </Switch>
-    </div>
-  );
+            />
+          <Route
+            exact path={`/admin/customers/:customerId`}
+            render={ (props) => <Customer {...props} customers={masterCustomerList} /> }
+            />
+          <Route exact path="/admin/locations" component={Locations} />
+          <Route exact path="/admin/orders" component={Orders} />
+          <Route exact path="/admin/products" component={Products} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
