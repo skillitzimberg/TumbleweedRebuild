@@ -1,11 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 // import { v4 } from 'uuid';
 // import Moment from 'moment';
 // import c from './../constants';
 // import { connect } from 'react-redux';
 
-function NewCustomerForm(){
-
+function NewCustomerForm(props){
+  console.log("New Customer Form", props);
   let _firstName = null;
   let _lastName = null;
   let _phone = null;
@@ -14,8 +15,17 @@ function NewCustomerForm(){
 
   function handleNewCustomerFormSubmission(event) {
     event.preventDefault();
-    console.log("New Customer Form Submitted");
-    props.onNewCustomerCreation({ firstName: _firstName.value, lastName: _lastName.value, phone: _phone.value, email: _email.value, postalCode: _postalCode })
+    
+    props.onNewCustomerCreation(
+      {
+        firstName: _firstName.value,
+        lastName: _lastName.value,
+        phone: _phone.value,
+        email: _email.value,
+        postalCode: _postalCode.value
+      }
+    );
+
     // const { dispatch } = props;
     // const action = {
     //   type: 'ADD_TICKET',
@@ -28,6 +38,7 @@ function NewCustomerForm(){
     //   dateAdded: new Moment(),
     // };
     // dispatch(action);
+
     _firstName.value = "";
     _lastName.value = "";
     _phone.value = "";
@@ -68,5 +79,9 @@ function NewCustomerForm(){
     </div>
   );
 }
+
+NewCustomerForm.propTypes = {
+  onNewCustomerCreation: PropTypes.func
+};
 
 export default NewCustomerForm;

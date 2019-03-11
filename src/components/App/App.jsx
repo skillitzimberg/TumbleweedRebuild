@@ -14,10 +14,10 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      customerList: masterCustomerList
-    }
+      customerList: []
+    };
 
-    this.handleNewCustomerCreation = this.handleNewCustomerCreation.bind();
+    this.handleAddingNewCustomer = this.handleAddingNewCustomer.bind(this);
   }
 
 render() {
@@ -28,18 +28,20 @@ render() {
           <Route
             exact path="/admin"
             render={(props) => <Admin {...props}
-            customers={this.state.customerList} onNewCustomerCreation={this.handleNewCustomerCreation}/>}
-            />
+            customers={this.state.customerList} onAddingNewCustomer={this.handleAddingNewCustomer}/>}
+          />
 
           <Route
             exact path="/admin/customers"
             render={(props) => <Customers {...props}
             customers={this.state.customerList}/>}
-            />
+          />
+
           <Route
             exact path={`/admin/customers/:customerId`}
             render={ (props) => <Customer {...props} customers={this.state.customerList} /> }
-            />
+          />
+
           <Route exact path="/admin/locations" component={Locations} />
           <Route exact path="/admin/orders" component={Orders} />
           <Route exact path="/admin/products" component={Products} />
@@ -48,9 +50,9 @@ render() {
     );
   }
 
-  handleNewCustomerCreation(newCustomer) {
+  handleAddingNewCustomer(newCustomer) {
     let newCustomerList = this.state.customerList.slice();
-    newCustomerList.push(newPost);
+    newCustomerList.push(newCustomer);
     this.setState({customerList: newCustomerList});
   }
 

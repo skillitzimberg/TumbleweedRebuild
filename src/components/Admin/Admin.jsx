@@ -8,8 +8,11 @@ import PropTypes from "prop-types";
 function Admin(props) {
   return (
     <div className="container">
-      <Customers customers={props.customers}/>
-      <Locations onNewCustomerCreation={props.onNewCustomerCreation} />
+      <Customers
+        customers={props.customers}
+        onNewCustomerCreation={props.onAddingNewCustomer}
+      />
+      <Locations />
       <Products />
       <Orders />
     </div>
