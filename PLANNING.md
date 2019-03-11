@@ -214,3 +214,4 @@ Orders will display the following . . .
 
 ## Study/Research Work Log 3/11/2019
 - 09:30 AM: Researching routing for displaying something like: /admin/customers/:customerId.
+- 10:30 AM: Continuing routing research.
