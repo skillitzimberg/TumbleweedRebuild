@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Nav({ match }){
-  console.log(match);
+function Nav(){
   return (
     <div className="navigation">
-      <Link to={`${match.url}/admin`}>Rendering with React</Link>
+      <Link to="/admin">Admin Home</Link>
       <Link to="/admin/customers">Customers</Link>
       <Link to="/admin/orders">Orders</Link>
       <Link to="/admin/products">Products</Link>
