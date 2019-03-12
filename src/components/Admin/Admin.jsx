@@ -20,7 +20,7 @@ function Admin(props) {
 }
 
 Admin.propTypes = {
-  customers: PropTypes.array,
+  customers: PropTypes.object,
   onAddingNewCustomer: PropTypes.func
 };
 
