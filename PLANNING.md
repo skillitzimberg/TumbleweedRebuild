@@ -216,3 +216,4 @@ Orders will display the following . . .
 - 09:30 AM: Researching routing for displaying something like: /admin/customers/:customerId.
 - 10:30 AM: Continuing routing research.
 - 12:15 PM: Routing issue solved; working on passing relevant data to <Customer />.
+- 17:00 PM: Troubleshooting adding Delete functionality.
