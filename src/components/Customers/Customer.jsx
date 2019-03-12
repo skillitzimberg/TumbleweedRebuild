@@ -23,7 +23,7 @@ function Customer(props) {
         <p>{customer.postalCode}</p>
       </div>
 
-      <EditCustomerForm customer={customer}/>
+      <EditCustomerForm customer={customer} onEditCustomer={props.onEditCustomer}/>
     </div>
   );
 }
@@ -35,7 +35,8 @@ Customer.propTypes = {
   lastName: PropTypes.string,
   phone: PropTypes.string,
   email: PropTypes.string,
-  postalCode: PropTypes.string
+  postalCode: PropTypes.string,
+  onEditCustomer: PropTypes.func
 };
 
 export default Customer;

@@ -1,4 +1,3 @@
-import { v4 } from "uuid";
 export const masterCustomerList = {
   'eriot': {
     firstName: "Scott",

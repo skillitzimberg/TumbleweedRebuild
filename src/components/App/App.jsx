@@ -8,7 +8,6 @@ import Products from "./../Products/Products";
 import { Route, Switch } from "react-router-dom";
 import { masterCustomerList } from "./masterCustomerList";
 import Customer from "./../Customers/Customer";
-import { v4 } from "uuid";
 
 class App extends React.Component {
   constructor(props) {
@@ -47,7 +46,8 @@ class App extends React.Component {
             exact path={"/admin/customers/:customerId"}
             render={ (props) => <Customer {...props}
               customers={this.state.customerList}
-              onDeletingCustomer={this.handleDeletingCustomer}/>}
+              onDeletingCustomer={this.handleDeletingCustomer}
+              onEditCustomer={this.handleEditingCustomer}/>}
           />
 
           <Route exact path="/admin/locations" component={Locations} />
@@ -75,18 +75,12 @@ class App extends React.Component {
       }
     }
     this.setState({ customerList: newCustomerList })
-  }
+  };
 
-  handleEditingCustomer(deleteThisCustomer) {
-    let newCustomerList = Object.assign({}, this.state.customerList);
-
-    for(let key in newCustomerList) {
-      if (key === deleteThisCustomer) {
-        delete newCustomerList[deleteThisCustomer];
-      }
-    }
-    this.setState({ customerList: newCustomerList })
-  }
+  handleEditingCustomer(editThisCustomer) {
+    this.handleDeletingCustomer(editThisCustomer);
+    this.handleAddingNewCustomer(editThisCustomer);
+  };
 
 }
 

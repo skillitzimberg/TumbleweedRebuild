@@ -1,11 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { v4 } from 'uuid';
-// import Moment from 'moment';
-// import c from './../constants';
-// import { connect } from 'react-redux';
 
-function EditCustomerForm({customer}){
+function EditCustomerForm(props){
   let _firstName = null;
   let _lastName = null;
   let _phone = null;
@@ -14,6 +10,7 @@ function EditCustomerForm({customer}){
 
   function handleEditFormSubmission(event) {
     event.preventDefault();
+    console.log('Edit form submitted: ', props);
 
     props.onEditCustomer(
       {
@@ -22,22 +19,9 @@ function EditCustomerForm({customer}){
         phone: _phone.value,
         email: _email.value,
         postalCode: _postalCode.value,
-        id: v4()
+        id: props.customer.id
       }
     );
-
-    // const { dispatch } = props;
-    // const action = {
-    //   type: 'ADD_TICKET',
-    //   id: v4(),
-    //   firstName: _firstName.value,
-    //   lastName: _lastName.value,
-    //   phone: _phone.value,
-    //   email: _email.value,
-    //   postl: _postalCode.value,
-    //   dateAdded: new Moment(),
-    // };
-    // dispatch(action);
 
     _firstName.value = "";
     _lastName.value = "";
@@ -53,39 +37,41 @@ function EditCustomerForm({customer}){
           type='text'
           id='firstName'
           placeholder='First Name'
-          value={customer.firstName}
+          default
           ref={(input) => {_firstName = input;}}/>
+
         <input
           type='text'
           id='lastName'
           placeholder='Last Name'
-          value={customer.lastName}
           ref={(input) => {_lastName = input;}}/>
+
         <input
           type='text'
           id='phone'
           placeholder='Phone Number'
-          value={customer.phone}
           ref={(input) => {_phone = input;}}/>
+
         <input
           type='text'
           id='email'
           placeholder='Email'
-          value={customer.email}
           ref={(input) => {_email = input;}}/>
+
         <input
           type='text'
           id='postalCode'
           placeholder='Zip Code'
-          value={customer.postalCode}
           ref={(input) => {_postalCode = input;}}/>
-        <button type='submit'>Add to Customers</button>
+
+        <button type='submit'>Edit Customer</button>
       </form>
     </div>
   );
 }
 
 EditCustomerForm.propTypes = {
+  customer: PropTypes.object,
   onEditCustomer: PropTypes.func
 };
 

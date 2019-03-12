@@ -1,9 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { v4 } from 'uuid';
-// import Moment from 'moment';
-// import c from './../constants';
-// import { connect } from 'react-redux';
 
 function NewCustomerForm(props){
   let _firstName = null;
@@ -25,19 +22,6 @@ function NewCustomerForm(props){
         id: v4()
       }
     );
-
-    // const { dispatch } = props;
-    // const action = {
-    //   type: 'ADD_TICKET',
-    //   id: v4(),
-    //   firstName: _firstName.value,
-    //   lastName: _lastName.value,
-    //   phone: _phone.value,
-    //   email: _email.value,
-    //   postl: _postalCode.value,
-    //   dateAdded: new Moment(),
-    // };
-    // dispatch(action);
 
     _firstName.value = "";
     _lastName.value = "";
