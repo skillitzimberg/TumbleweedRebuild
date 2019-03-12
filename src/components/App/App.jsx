@@ -58,9 +58,14 @@ class App extends React.Component {
   }
 
   handleAddingNewCustomer(newCustomer) {
-    let newCustomerList = this.state.customerList.slice();
-    newCustomer.id = v4();
-    newCustomerList.push(newCustomer);
+    let newCustomerList = Object.assign({}, this.state.customerList, {
+      [newCustomer.id]: newCustomer
+    });
+
+    // let newCustomerList = this.state.customerList.slice();
+    // newCustomer.id = v4();
+    // newCustomerList.push(newCustomer);
+    
     this.setState({customerList: newCustomerList});
   }
 
