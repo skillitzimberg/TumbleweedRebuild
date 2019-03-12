@@ -13,9 +13,9 @@ import { v4 } from "uuid";
 class App extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
-      customerList: {}
+      customerList: masterCustomerList
     };
 
     this.handleAddingNewCustomer = this.handleAddingNewCustomer.bind(this);

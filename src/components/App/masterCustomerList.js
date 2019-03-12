@@ -1,24 +1,27 @@
 import { v4 } from "uuid";
 export const masterCustomerList = {
-  'v4()': {
+  'eriot': {
     firstName: "Scott",
     lastName: "Bergler",
     phone: "503.890.5118",
     email: "commandinghands@gmail.com",
-    postalCode: "97211"
+    postalCode: "97211",
+    id: 'eriot'
   },
-  'v4()': {
+  'saysomething': {
     firstName: "Millicent",
     lastName: "Zimdars",
     phone: "971.276.9712",
     email: "anemail@emailorg",
-    postalCode: "97123"
+    postalCode: "97123",
+    id: 'saysomething'
   },
-  'v4()': {
+  'crisper': {
     firstName: "Wayne",
     lastName: "Coyne",
     phone: "435.912.4083",
     email: "bitcoyne@me.com",
-    postalCode: "56812"
+    postalCode: "56812",
+    id: 'crisper'
   },
 };
