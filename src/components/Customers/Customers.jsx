@@ -23,7 +23,7 @@ function Customers(props) {
 }
 
 Customers.propTypes = {
-  customers: PropTypes.array,
+  customers: PropTypes.object,
   onAddingNewCustomer: PropTypes.func,
   onNewCustomerCreation: PropTypes.func,
   onDeletingCustomer: PropTypes.func

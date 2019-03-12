@@ -27,7 +27,7 @@ function Customer(props) {
 
 Customer.propTypes = {
   match: PropTypes.object,
-  customers: PropTypes.array,
+  customers: PropTypes.object,
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   phone: PropTypes.string,
