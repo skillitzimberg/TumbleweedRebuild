@@ -9,8 +9,12 @@ function Customers(props) {
     <div>
       <div className="customers">
         <p>Customers</p>
-        <CustomerList customers={props.customers} />
-        <NewCustomerForm onNewCustomerCreation={props.onAddingNewCustomer} />
+
+        <CustomerList
+          customers={props.customers}
+        />
+
+        <NewCustomerForm onNewCustomerCreation={props.onAddingNewCustomer}/>
       </div>
     </div>
   );

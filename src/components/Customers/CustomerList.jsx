@@ -7,7 +7,11 @@ function CustomerList({customers}) {
   return (
     <div className="container">
       {customers.map((customer) =>
-        <Link to={`/admin/customers/${customer.id}`} key={v4()}><p>{customer.firstName} {customer.lastName}</p></Link>
+        <Link
+          to={`/admin/customers/${customer.id}`}
+          key={v4()}>
+          <p>{customer.firstName} {customer.lastName}</p>
+        </Link>
       )}
     </div>
   );

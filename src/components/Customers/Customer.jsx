@@ -10,6 +10,14 @@ function Customer(props) {
     }
   }
 
+  function deleteCustomer(customerId) {
+    event.preventDefault();
+
+    console.log(customerId);
+
+    // props.onDeletingCustomer();
+  }
+
   const customer = findCustomer(props.match.params.customerId);
 
   return (
@@ -20,6 +28,8 @@ function Customer(props) {
         <p>{customer.email}</p>
         <p>{customer.postalCode}</p>
       </div>
+
+      <button type="submit" onClick={deleteCustomer(customer.id)}>Delete</button>
     </div>
   );
 }
@@ -31,7 +41,8 @@ Customer.propTypes = {
   lastName: PropTypes.string,
   phone: PropTypes.string,
   email: PropTypes.string,
-  postalCode: PropTypes.string
+  postalCode: PropTypes.string,
+  onDeletingCustomer: PropTypes.func
 };
 
 export default Customer;

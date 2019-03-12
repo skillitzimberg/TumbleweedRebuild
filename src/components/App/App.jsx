@@ -19,6 +19,7 @@ class App extends React.Component {
     };
 
     this.handleAddingNewCustomer = this.handleAddingNewCustomer.bind(this);
+    this.handleDeletingCustomer = this.handleDeletingCustomer.bind(this);
   }
 
   render() {
@@ -29,18 +30,22 @@ class App extends React.Component {
           <Route
             exact path="/admin"
             render={(props) => <Admin {...props}
-              customers={this.state.customerList} onAddingNewCustomer={this.handleAddingNewCustomer}/>}
+              customers={this.state.customerList}
+              onAddingNewCustomer={this.handleAddingNewCustomer}/>}
           />
 
           <Route
             exact path="/admin/customers"
             render={(props) => <Customers {...props}
-              customers={this.state.customerList} onAddingNewCustomer={this.handleAddingNewCustomer}/>}
+              customers={this.state.customerList}
+              onAddingNewCustomer={this.handleAddingNewCustomer}/>}
           />
 
           <Route
             exact path={"/admin/customers/:customerId"}
-            render={ (props) => <Customer {...props} customers={this.state.customerList} /> }
+            render={ (props) => <Customer {...props}
+              customers={this.state.customerList}
+              onDeletingCustomer={this.handleDeletingCustomer}/>}
           />
 
           <Route exact path="/admin/locations" component={Locations} />
@@ -56,6 +61,11 @@ class App extends React.Component {
     newCustomer.id = v4();
     newCustomerList.push(newCustomer);
     this.setState({customerList: newCustomerList});
+  }
+
+  handleDeletingCustomer(deleteThisCustomer) {
+    this.setState({
+      customerList: this.state.customerList.filter(customer => customer.id !== deleteThisCustomer.id)});
   }
 
 }
