@@ -15,8 +15,9 @@ function CustomerList({customers, onDeletingCustomer}) {
 
   return (
     <div className="container">
-      {customers.map((customer) =>
-        <div key={v4()}>
+      {Object.keys(customers).map((customerId) => {
+        let customer = customers[customerId];
+        return <div key={v4()}>
           <Link
             to={`/admin/customers/${customer.id}`}
             >
@@ -24,13 +25,14 @@ function CustomerList({customers, onDeletingCustomer}) {
           </Link>
           <button onClick={() => {deleteCustomer(customer.id)}}>Delete</button>
         </div>
+        }
       )}
     </div>
   );
 }
 
 CustomerList.propTypes = {
-  customers: PropTypes.array,
+  customers: PropTypes.object,
   onDeletingCustomer: PropTypes.func
 };
 

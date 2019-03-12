@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import { v4 } from 'uuid';
+import { v4 } from 'uuid';
 // import Moment from 'moment';
 // import c from './../constants';
 // import { connect } from 'react-redux';
@@ -21,7 +21,8 @@ function NewCustomerForm(props){
         lastName: _lastName.value,
         phone: _phone.value,
         email: _email.value,
-        postalCode: _postalCode.value
+        postalCode: _postalCode.value,
+        id: v4()
       }
     );
 

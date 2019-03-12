@@ -15,7 +15,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      customerList: masterCustomerList
+      customerList: {}
     };
 
     this.handleAddingNewCustomer = this.handleAddingNewCustomer.bind(this);
@@ -61,11 +61,11 @@ class App extends React.Component {
     let newCustomerList = Object.assign({}, this.state.customerList, {
       [newCustomer.id]: newCustomer
     });
-
+    console.log(newCustomerList);
     // let newCustomerList = this.state.customerList.slice();
-    // newCustomer.id = v4();
+
     // newCustomerList.push(newCustomer);
-    
+
     this.setState({customerList: newCustomerList});
   }
 
