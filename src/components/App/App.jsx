@@ -13,13 +13,14 @@ import { v4 } from "uuid";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       customerList: masterCustomerList
     };
 
     this.handleAddingNewCustomer = this.handleAddingNewCustomer.bind(this);
     this.handleDeletingCustomer = this.handleDeletingCustomer.bind(this);
+    this.handleEditingCustomer = this.handleEditingCustomer.bind(this);
   }
 
   render() {
@@ -61,25 +62,29 @@ class App extends React.Component {
     let newCustomerList = Object.assign({}, this.state.customerList, {
       [newCustomer.id]: newCustomer
     });
-    console.log(newCustomerList);
-    // let newCustomerList = this.state.customerList.slice();
-
-    // newCustomerList.push(newCustomer);
 
     this.setState({customerList: newCustomerList});
   }
 
   handleDeletingCustomer(deleteThisCustomer) {
-    console.log("handle delete", deleteThisCustomer);
     let newCustomerList = Object.assign({}, this.state.customerList);
-    console.log("before delete", newCustomerList);
 
     for(let key in newCustomerList) {
       if (key === deleteThisCustomer) {
         delete newCustomerList[deleteThisCustomer];
       }
     }
-    console.log("after delete", newCustomerList);
+    this.setState({ customerList: newCustomerList })
+  }
+
+  handleEditingCustomer(deleteThisCustomer) {
+    let newCustomerList = Object.assign({}, this.state.customerList);
+
+    for(let key in newCustomerList) {
+      if (key === deleteThisCustomer) {
+        delete newCustomerList[deleteThisCustomer];
+      }
+    }
     this.setState({ customerList: newCustomerList })
   }
 

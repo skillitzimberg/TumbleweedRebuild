@@ -23,6 +23,7 @@ function CustomerList({customers, onDeletingCustomer}) {
             >
             <p>{customer.firstName} {customer.lastName}</p>
           </Link>
+          <button onClick={() => {editCustomer(customer.id)}}>Edit</button>
           <button onClick={() => {deleteCustomer(customer.id)}}>Delete</button>
         </div>
         }

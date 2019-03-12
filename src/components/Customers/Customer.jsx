@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import EditCustomerForm from "./../Customers/EditCustomerForm";
 
 function Customer(props) {
 
@@ -21,6 +22,8 @@ function Customer(props) {
         <p>{customer.email}</p>
         <p>{customer.postalCode}</p>
       </div>
+
+      <EditCustomerForm customer={customer}/>
     </div>
   );
 }
