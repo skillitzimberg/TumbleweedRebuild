@@ -5,6 +5,7 @@ import NewCustomerForm from "./../Customers/NewCustomerForm";
 import "./customerStyles.css";
 
 function Customers(props) {
+
   return (
     <div>
       <div className="customers">
@@ -12,6 +13,7 @@ function Customers(props) {
 
         <CustomerList
           customers={props.customers}
+          onDeletingCustomer={props.onDeletingCustomer}
         />
 
         <NewCustomerForm onNewCustomerCreation={props.onAddingNewCustomer}/>
@@ -23,7 +25,8 @@ function Customers(props) {
 Customers.propTypes = {
   customers: PropTypes.array,
   onAddingNewCustomer: PropTypes.func,
-  onNewCustomerCreation: PropTypes.func
+  onNewCustomerCreation: PropTypes.func,
+  onDeletingCustomer: PropTypes.func
 };
 
 export default Customers;

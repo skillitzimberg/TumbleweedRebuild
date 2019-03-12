@@ -3,22 +3,35 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { v4 } from "uuid";
 
-function CustomerList({customers}) {
+function CustomerList({customers, onDeletingCustomer}) {
+
+  function deleteCustomer(customerId) {
+    event.preventDefault();
+
+    console.log("deleteCustomer", customerId);
+
+    onDeletingCustomer(customerId);
+  }
+
   return (
     <div className="container">
       {customers.map((customer) =>
-        <Link
-          to={`/admin/customers/${customer.id}`}
-          key={v4()}>
-          <p>{customer.firstName} {customer.lastName}</p>
-        </Link>
+        <div key={v4()}>
+          <Link
+            to={`/admin/customers/${customer.id}`}
+            >
+            <p>{customer.firstName} {customer.lastName}</p>
+          </Link>
+          <button onClick={() => {deleteCustomer(customer.id)}}>Delete</button>
+        </div>
       )}
     </div>
   );
 }
 
 CustomerList.propTypes = {
-  customers: PropTypes.array
+  customers: PropTypes.array,
+  onDeletingCustomer: PropTypes.func
 };
 
 export default CustomerList;

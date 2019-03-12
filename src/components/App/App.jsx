@@ -38,7 +38,8 @@ class App extends React.Component {
             exact path="/admin/customers"
             render={(props) => <Customers {...props}
               customers={this.state.customerList}
-              onAddingNewCustomer={this.handleAddingNewCustomer}/>}
+              onAddingNewCustomer={this.handleAddingNewCustomer}
+              onDeletingCustomer={this.handleDeletingCustomer}/>}
           />
 
           <Route
@@ -64,8 +65,9 @@ class App extends React.Component {
   }
 
   handleDeletingCustomer(deleteThisCustomer) {
+    console.log("handle delete", deleteThisCustomer);
     this.setState({
-      customerList: this.state.customerList.filter(customer => customer.id !== deleteThisCustomer.id)});
+      customerList: this.state.customerList.filter(customer => customer.id !== deleteThisCustomer)});
   }
 
 }
