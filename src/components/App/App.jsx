@@ -71,8 +71,16 @@ class App extends React.Component {
 
   handleDeletingCustomer(deleteThisCustomer) {
     console.log("handle delete", deleteThisCustomer);
-    this.setState({
-      customerList: this.state.customerList.filter(customer => customer.id !== deleteThisCustomer)});
+    let newCustomerList = Object.assign({}, this.state.customerList);
+    console.log("before delete", newCustomerList);
+
+    for(let key in newCustomerList) {
+      if (key === deleteThisCustomer) {
+        delete newCustomerList[deleteThisCustomer];
+      }
+    }
+    console.log("after delete", newCustomerList);
+    this.setState({ customerList: newCustomerList })
   }
 
 }
