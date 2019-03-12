@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 function Customer(props) {
 
   function findCustomer(id) {
-    for (let i = 0; i < props.customers.length; i++) {
-      if (id === props.customers[i].id) {
-        return props.customers[i];
+    for (let key in props.customers) {
+      if (id === props.customers[key].id) {
+        return props.customers[key];
       }
     }
   }
