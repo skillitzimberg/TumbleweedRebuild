@@ -1,21 +1,33 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { v4 } from "uuid";
 
-function NewProductForm(){
-
-  let _name = null;
-  let _type = null;
+function NewProductForm(props){
+  let _productName = null;
+  let _productType = null;
   let _ingredients = null;
-  let _description = null;
-  let _price = null;
+  let _productDescription = null;
+  let _productPrice = null;
 
   function handleNewProductFormSubmission(event) {
     event.preventDefault();
 
-    _name.value = "";
-    _type.value = "";
+    props.onNewProductCreation(
+      {
+        productName: _productName.value,
+        productType: _productType.value,
+        ingredients: _ingredients.value,
+        productDescription: _productDescription.value,
+        productPrice: _productPrice.value,
+        id: v4()
+      }
+    );
+
+    _productName.value = "";
+    _productType.value = "";
     _ingredients.value = "";
-    _description.value = "";
-    _price.value = "";
+    _productDescription.value = "";
+    _productPrice.value = "";
   }
 
   return (
@@ -25,17 +37,17 @@ function NewProductForm(){
           type="text"
           id="name"
           placeholder="Product Name"
-          ref={(input) => {_name = input;}}/>
+          ref={(input) => {_productName = input;}}/>
         <input
           type="text"
           id="type"
           placeholder="Type"
-          ref={(input) => {_type = input;}}/>
+          ref={(input) => {_productType = input;}}/>
         <input
-          type="text"
+          type="number"
           id="price"
           placeholder="Price"
-          ref={(input) => {_price = input;}}/>
+          ref={(input) => {_productPrice = input;}}/>
         <textarea
           id="ingredients"
           placeholder="Ingredients"
@@ -43,11 +55,15 @@ function NewProductForm(){
         <textarea
           id="description"
           placeholder="Description"
-          ref={(textarea) => {_description = textarea;}}/>
+          ref={(textarea) => {_productDescription = textarea;}}/>
         <button type="submit">Add to Products</button>
       </form>
     </div>
   );
 }
+
+NewProductForm.propTypes = {
+  onNewProductCreation: PropTypes.func
+};
 
 export default NewProductForm;

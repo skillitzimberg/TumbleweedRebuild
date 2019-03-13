@@ -24,6 +24,8 @@ function Admin(props) {
 }
 
 Admin.propTypes = {
+  customers: PropTypes.object,
+  onAddingNewCustomer: PropTypes.func,
   products: PropTypes.object,
   onAddingNewProduct: PropTypes.func
 };

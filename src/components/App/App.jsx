@@ -5,6 +5,7 @@ import Customer from "./../Customers/Customer";
 import Customers from "./../Customers/Customers";
 import Locations from "./../Locations/Locations";
 import Orders from "./../Orders/Orders";
+import Product from "./../Products/Product";
 import Products from "./../Products/Products";
 import { Route, Switch } from "react-router-dom";
 import { masterCustomerList } from "./masterCustomerList";
