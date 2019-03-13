@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { v4 } from 'uuid';
+import { v4 } from "uuid";
 
 function NewCustomerForm(props){
   let _firstName = null;
@@ -34,31 +34,31 @@ function NewCustomerForm(props){
     <div>
       <form onSubmit={handleNewCustomerFormSubmission}>
         <input
-          type='text'
-          id='firstName'
-          placeholder='First Name'
+          type="text"
+          id="firstName"
+          placeholder="First Name"
           ref={(input) => {_firstName = input;}}/>
         <input
-          type='text'
-          id='lastName'
-          placeholder='Last Name'
+          type="text"
+          id="lastName"
+          placeholder="Last Name"
           ref={(input) => {_lastName = input;}}/>
         <input
-          type='text'
-          id='phone'
-          placeholder='Phone Number'
+          type="text"
+          id="phone"
+          placeholder="Phone Number"
           ref={(input) => {_phone = input;}}/>
         <input
-          type='text'
-          id='email'
-          placeholder='Email'
+          type="text"
+          id="email"
+          placeholder="Email"
           ref={(input) => {_email = input;}}/>
         <input
-          type='text'
-          id='postalCode'
-          placeholder='Zip Code'
+          type="text"
+          id="postalCode"
+          placeholder="Zip Code"
           ref={(input) => {_postalCode = input;}}/>
-        <button type='submit'>Add to Customers</button>
+        <button type="submit">Add to Customers</button>
       </form>
     </div>
   );

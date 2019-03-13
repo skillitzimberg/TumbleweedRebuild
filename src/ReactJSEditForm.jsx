@@ -117,7 +117,7 @@ class EditCliente extends React.Component {
 			console.log("is Updated...");
 		} else {
 			this.props.onClienteAdd(text);
-			// console.log('is Created...');
+			// console.log("is Created...");
 		}
 	}
 	onChangeEdit(e) {

@@ -74,13 +74,13 @@ class App extends React.Component {
         delete newCustomerList[deleteThisCustomer];
       }
     }
-    this.setState({ customerList: newCustomerList })
-  };
+    this.setState({ customerList: newCustomerList });
+  }
 
   handleEditingCustomer(editThisCustomer) {
     this.handleDeletingCustomer(editThisCustomer);
     this.handleAddingNewCustomer(editThisCustomer);
-  };
+  }
 
 }
 

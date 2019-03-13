@@ -1,8 +1,8 @@
 import React from "react";
-// import { v4 } from 'uuid';
-// import Moment from 'moment';
-// import c from './../constants';
-// import { connect } from 'react-redux';
+// import { v4 } from "uuid";
+// import Moment from "moment";
+// import c from "./../constants";
+// import { connect } from "react-redux";
 
 function NewProductForm(){
 
@@ -16,7 +16,7 @@ function NewProductForm(){
     event.preventDefault();
     // const { dispatch } = props;
     // const action = {
-    //   type: 'ADD_TICKET',
+    //   type: "ADD_TICKET",
     //   id: v4(),
     //   firstName: _firstName.value,
     //   lastName: _lastName.value,
@@ -37,29 +37,29 @@ function NewProductForm(){
     <div>
       <form onSubmit={handleNewProductFormSubmission}>
         <input
-          type='text'
-          id='name'
-          placeholder='Product Name'
+          type="text"
+          id="name"
+          placeholder="Product Name"
           ref={(input) => {_name = input;}}/>
         <input
-          type='text'
-          id='type'
-          placeholder='Type'
+          type="text"
+          id="type"
+          placeholder="Type"
           ref={(input) => {_type = input;}}/>
         <input
-          type='text'
-          id='price'
-          placeholder='Price'
+          type="text"
+          id="price"
+          placeholder="Price"
           ref={(input) => {_price = input;}}/>
         <textarea
-          id='ingredients'
-          placeholder='Ingredients'
+          id="ingredients"
+          placeholder="Ingredients"
           ref={(textarea) => {_ingredients = textarea;}}/>
         <textarea
-          id='description'
-          placeholder='Description'
+          id="description"
+          placeholder="Description"
           ref={(textarea) => {_description = textarea;}}/>
-        <button type='submit'>Add to Products</button>
+        <button type="submit">Add to Products</button>
       </form>
     </div>
   );

@@ -1,8 +1,8 @@
 import React from "react";
-// import { v4 } from 'uuid';
-// import Moment from 'moment';
-// import c from './../constants';
-// import { connect } from 'react-redux';
+// import { v4 } from "uuid";
+// import Moment from "moment";
+// import c from "./../constants";
+// import { connect } from "react-redux";
 
 function NewLocationForm(){
 
@@ -15,7 +15,7 @@ function NewLocationForm(){
     event.preventDefault();
     // const { dispatch } = props;
     // const action = {
-    //   type: 'ADD_TICKET',
+    //   type: "ADD_TICKET",
     //   id: v4(),
     //   firstName: _firstName.value,
     //   lastName: _lastName.value,
@@ -35,25 +35,25 @@ function NewLocationForm(){
     <div>
       <form onSubmit={handleNewLocationFormSubmission}>
         <input
-          type='text'
-          id='name'
-          placeholder='Market Name'
+          type="text"
+          id="name"
+          placeholder="Market Name"
           ref={(input) => {_name = input;}}/>
         <input
-          type='text'
-          id='streetAddress'
-          placeholder='Market Address'
+          type="text"
+          id="streetAddress"
+          placeholder="Market Address"
           ref={(input) => {_streetAddress = input;}}/>
         <input
-          type='text'
-          id='postalCode'
-          placeholder='Zip Code'
+          type="text"
+          id="postalCode"
+          placeholder="Zip Code"
           ref={(input) => {_postalCode = input;}}/>
         <textarea
-          id='description'
-          placeholder='Market Description'
+          id="description"
+          placeholder="Market Description"
           ref={(textarea) => {_description = textarea;}}/>
-        <button type='submit'>Add to Locations</button>
+        <button type="submit">Add to Locations</button>
       </form>
     </div>
   );

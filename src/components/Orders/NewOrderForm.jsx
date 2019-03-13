@@ -1,8 +1,8 @@
 import React from "react";
-// import { v4 } from 'uuid';
-// import Moment from 'moment';
-// import c from './../constants';
-// import { connect } from 'react-redux';
+// import { v4 } from "uuid";
+// import Moment from "moment";
+// import c from "./../constants";
+// import { connect } from "react-redux";
 
 function NewOrderForm(){
 
@@ -14,7 +14,7 @@ function NewOrderForm(){
     event.preventDefault();
     // const { dispatch } = props;
     // const action = {
-    //   type: 'ADD_TICKET',
+    //   type: "ADD_TICKET",
     //   id: v4(),
     //   customer: _customer.value,
     //   pickupLocation: _pickupLocation.value,
@@ -44,21 +44,21 @@ function NewOrderForm(){
     <div>
       <form onSubmit={handleNewOrderFormSubmission}>
         <input
-          type='text'
-          id='customer'
-          placeholder='Customer'
+          type="text"
+          id="customer"
+          placeholder="Customer"
           ref={(input) => {_customer = input;}}/>
         <input
-          type='text'
-          id='pickupLocation'
-          placeholder='Pick Location'
+          type="text"
+          id="pickupLocation"
+          placeholder="Pick Location"
           ref={(input) => {_pickupLocation = input;}}/>
         <input
-          type='text'
-          id='pickupDate'
-          placeholder='Pickup Date'
+          type="text"
+          id="pickupDate"
+          placeholder="Pickup Date"
           ref={(input) => {_pickupDate = input;}}/>
-        <button type='submit'>Add to Orders</button>
+        <button type="submit">Add to Orders</button>
       </form>
     </div>
   );

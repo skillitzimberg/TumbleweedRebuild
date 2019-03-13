@@ -18,11 +18,11 @@ function CustomerList({customers, onDeletingCustomer}) {
         return <div key={v4()}>
           <Link
             to={`/admin/customers/${customer.id}`}
-            >
+          >
             <p>{customer.firstName} {customer.lastName}</p>
           </Link>
           <button onClick={() => {deleteCustomer(customer.id);}}>Delete</button>
-        </div>
+        </div>;
       }
       )}
     </div>

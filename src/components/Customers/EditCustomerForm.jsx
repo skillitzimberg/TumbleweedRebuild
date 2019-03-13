@@ -10,7 +10,6 @@ function EditCustomerForm(props){
 
   function handleEditFormSubmission(event) {
     event.preventDefault();
-    console.log('Edit form submitted: ', props);
 
     props.onEditCustomer(
       {
@@ -34,37 +33,37 @@ function EditCustomerForm(props){
     <div>
       <form onSubmit={handleEditFormSubmission}>
         <input
-          type='text'
-          id='firstName'
-          placeholder='First Name'
+          type="text"
+          id="firstName"
+          placeholder="First Name"
           default
           ref={(input) => {_firstName = input;}}/>
 
         <input
-          type='text'
-          id='lastName'
-          placeholder='Last Name'
+          type="text"
+          id="lastName"
+          placeholder="Last Name"
           ref={(input) => {_lastName = input;}}/>
 
         <input
-          type='text'
-          id='phone'
-          placeholder='Phone Number'
+          type="text"
+          id="phone"
+          placeholder="Phone Number"
           ref={(input) => {_phone = input;}}/>
 
         <input
-          type='text'
-          id='email'
-          placeholder='Email'
+          type="text"
+          id="email"
+          placeholder="Email"
           ref={(input) => {_email = input;}}/>
 
         <input
-          type='text'
-          id='postalCode'
-          placeholder='Zip Code'
+          type="text"
+          id="postalCode"
+          placeholder="Zip Code"
           ref={(input) => {_postalCode = input;}}/>
 
-        <button type='submit'>Edit Customer</button>
+        <button type="submit">Edit Customer</button>
       </form>
     </div>
   );
