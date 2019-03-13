@@ -2,30 +2,69 @@ import React from "react";
 import PropTypes from "prop-types";
 import EditCustomerForm from "./../Customers/EditCustomerForm";
 
-function Customer(props) {
+class Customer extends React.Component {
+  constructor(props) {
 
-  function findCustomer(id) {
-    for (let key in props.customers) {
-      if (id === props.customers[key].id) {
-        return props.customers[key];
-      }
-    }
+    super(props);
+    const customer = props.customers[props.match.params.customerId];
+
+    this.state = {
+      firstName: customer.firstName,
+      lastName: customer.lastName,
+      phone: customer.phone,
+      email: customer.email,
+      postalCode: customer.postalCode,
+      id: customer.id
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleEditFormSubmission = this.handleEditFormSubmission.bind(this);
   }
 
-  const customer = findCustomer(props.match.params.customerId);
+  handleChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
 
-  return (
-    <div>
-      <div className="container">
-        <h3>{customer.firstName} {customer.lastName}</h3>
-        <p>{customer.phone}</p>
-        <p>{customer.email}</p>
-        <p>{customer.postalCode}</p>
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleEditFormSubmission(event) {
+    event.preventDefault();
+
+    this.props.onEditCustomer(
+      {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        phone: this.state.phone,
+        email: this.state.email,
+        postalCode: this.state.postalCode,
+        id: this.state.id
+      }
+    );
+  }
+
+  render() {
+    const customer = this.state;
+    return (
+      <div>
+        <div className="container">
+          <h3>{this.state.firstName} {this.state.lastName}</h3>
+          <p>{this.state.phone}</p>
+          <p>{this.state.email}</p>
+          <p>{this.state.postalCode}</p>
+        </div>
+
+        <EditCustomerForm
+          customer={customer}
+          onEditCustomer={this.props.onEditCustomer}
+          onChange={this.handleChange}
+          onEditFormSubmission={this.handleEditFormSubmission}/>
       </div>
-
-      <EditCustomerForm customer={customer} onEditCustomer={props.onEditCustomer}/>
-    </div>
-  );
+    );
+  }
 }
 
 Customer.propTypes = {

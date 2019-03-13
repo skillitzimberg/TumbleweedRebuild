@@ -1,8 +1,4 @@
 import React from "react";
-// import { v4 } from "uuid";
-// import Moment from "moment";
-// import c from "./../constants";
-// import { connect } from "react-redux";
 
 function NewProductForm(){
 
@@ -14,18 +10,7 @@ function NewProductForm(){
 
   function handleNewProductFormSubmission(event) {
     event.preventDefault();
-    // const { dispatch } = props;
-    // const action = {
-    //   type: "ADD_TICKET",
-    //   id: v4(),
-    //   firstName: _firstName.value,
-    //   lastName: _lastName.value,
-    //   phone: _phone.value,
-    //   email: _email.value,
-    //   postl: _price.value,
-    //   dateAdded: new Moment(),
-    // };
-    // dispatch(action);
+
     _name.value = "";
     _type.value = "";
     _ingredients.value = "";

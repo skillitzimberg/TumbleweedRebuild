@@ -1,18 +1,32 @@
 import React from "react";
-import Product from "./../Products/Product";
+import PropTypes from "prop-types";
+import ProductList from "./../Products/ProductList";
 import NewProductForm from "./../Products/NewProductForm";
-// import PropTypes from "prop-types";
+import "./productStyles.css";
 
-function Products() {
+function Products(props) {
+  console.log("Products props: ", props)
   return (
     <div>
-      <div className="container">
-        <p>Products Works</p>
-        <Product />
-        <NewProductForm />
+      <div className="products">
+        <p>Products</p>
+
+        <ProductList
+          products={props.products}
+          onDeletingProduct={props.onDeletingProduct}
+        />
+
+      <NewProductForm onNewProductCreation={props.onAddingNewProduct}/>
       </div>
     </div>
   );
 }
+
+Products.propTypes = {
+  products: PropTypes.object,
+  onAddingNewProduct: PropTypes.func,
+  onNewProductCreation: PropTypes.func,
+  onDeletingProduct: PropTypes.func
+};
 
 export default Products;
