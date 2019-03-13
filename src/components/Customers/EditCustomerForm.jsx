@@ -1,72 +1,91 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function EditCustomerForm(props){
-  let _firstName = null;
-  let _lastName = null;
-  let _phone = null;
-  let _email = null;
-  let _postalCode = null;
+class EditCustomerForm extends React.Component {
+  constructor(props) {
+    super(props);
 
-  function handleEditFormSubmission(event) {
+
+    this.state = {
+      customerToEdit: props.customer
+    };
+
+    this.handleEditFormSubmission = this.handleEditFormSubmission.bind(this);
+  }
+
+  handleEditFormSubmission(event) {
     event.preventDefault();
 
-    props.onEditCustomer(
+    let _firstName = null;
+    let _lastName = null;
+    let _phone = null;
+    let _email = null;
+    let _postalCode = null;
+
+    this.props.onEditCustomer(
       {
-        firstName: _firstName.value,
-        lastName: _lastName.value,
-        phone: _phone.value,
-        email: _email.value,
-        postalCode: _postalCode.value,
-        id: props.customer.id
+        firstName: this._firstName.value,
+        lastName: this._lastName.value,
+        phone: this._phone.value,
+        email: this._email.value,
+        postalCode: this._postalCode.value,
+        id: this.state.customerToEdit.id
       }
     );
 
-    _firstName.value = "";
-    _lastName.value = "";
-    _phone.value = "";
-    _email.value = "";
-    _postalCode.value = "";
+    this._firstName.value = "";
+    this._lastName.value = "";
+    this._phone.value = "";
+    this._email.value = "";
+    this._postalCode.value = "";
   }
 
-  return (
-    <div>
-      <form onSubmit={handleEditFormSubmission}>
-        <input
-          type="text"
-          id="firstName"
-          placeholder="First Name"
-          default
-          ref={(input) => {_firstName = input;}}/>
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.handleEditFormSubmission}>
+          <input
+            type="text"
+            id="firstName"
+            placeholder={this.state.customerToEdit.firstName}
+            ref={(input) => {this._firstName = input;}}
+            required/>
 
-        <input
-          type="text"
-          id="lastName"
-          placeholder="Last Name"
-          ref={(input) => {_lastName = input;}}/>
+          <input
+            type="text"
+            id="lastName"
+            placeholder={this.state.customerToEdit.lastName}
+            ref={(input) => {this._lastName = input;}}
+            required/>
 
-        <input
-          type="text"
-          id="phone"
-          placeholder="Phone Number"
-          ref={(input) => {_phone = input;}}/>
+          <input
+            type="text"
+            id="phone"
+            placeholder={this.state.customerToEdit.phone}
+            ref={(input) => {this._phone = input;}}
+            pattern="[0-9]{10,15}"
+            required/>
 
-        <input
-          type="text"
-          id="email"
-          placeholder="Email"
-          ref={(input) => {_email = input;}}/>
+          <input
+            type="text"
+            id="email"
+            placeholder={this.state.customerToEdit.email}
+            ref={(input) => {this._email = input;}}
+            pattern="[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}"
+            required/>
 
-        <input
-          type="text"
-          id="postalCode"
-          placeholder="Zip Code"
-          ref={(input) => {_postalCode = input;}}/>
+          <input
+            type="text"
+            id="postalCode"
+            placeholder={this.state.customerToEdit.postalCode}
+            pattern="[A-Za-z0-9-]{5,10}"
+            ref={(input) => {this._postalCode = input;}}/>
 
-        <button type="submit">Edit Customer</button>
-      </form>
-    </div>
-  );
+          <button type="submit">Edit Customer</button>
+        </form>
+      </div>
+    );
+  }
 }
 
 EditCustomerForm.propTypes = {

@@ -37,27 +37,39 @@ function NewCustomerForm(props){
           type="text"
           id="firstName"
           placeholder="First Name"
-          ref={(input) => {_firstName = input;}}/>
+          ref={(input) => {_firstName = input;}}
+          required/>
+
         <input
           type="text"
           id="lastName"
           placeholder="Last Name"
-          ref={(input) => {_lastName = input;}}/>
+          ref={(input) => {_lastName = input;}}
+          required/>
+
         <input
           type="text"
           id="phone"
           placeholder="Phone Number"
-          ref={(input) => {_phone = input;}}/>
+          ref={(input) => {_phone = input;}}
+          pattern="[0-9]{10,15}"
+          required/>
+
         <input
           type="text"
           id="email"
           placeholder="Email"
-          ref={(input) => {_email = input;}}/>
+          ref={(input) => {_email = input;}}
+          pattern="[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}"
+          required/>
+
         <input
           type="text"
           id="postalCode"
           placeholder="Zip Code"
+          pattern="[A-Za-z0-9-]{5,10}"
           ref={(input) => {_postalCode = input;}}/>
+
         <button type="submit">Add to Customers</button>
       </form>
     </div>
