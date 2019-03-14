@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-class EditProductForm extends React.Component {
+class EditLocationForm extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -12,39 +12,32 @@ class EditProductForm extends React.Component {
 
         <form onSubmit={this.props.onEditFormSubmission}>
           <input
-            name="productName"
+            name="locationName"
             type="text"
-            defaultValue={this.props.product.productName}
+            defaultValue={this.props.location.locationName}
             onChange={this.props.onChange}
             required />
 
           <input
-            name="productType"
+            name="locationAddress"
             type="text"
-            defaultValue={this.props.product.productType}
+            defaultValue={this.props.location.locationAddress}
             onChange={this.props.onChange}
             required />
 
           <input
-            name="ingredients"
+            name="locationPostalCode"
             type="text"
-            defaultValue={this.props.product.ingredients}
+            defaultValue={this.props.location.locationPostalCode}
             onChange={this.props.onChange}
             required />
 
           <input
-            name="productDescription"
+            name="locationDescription"
             type="text"
-            defaultValue={this.props.product.productDescription}
+            defaultValue={this.props.location.locationDescription}
             onChange={this.props.onChange}
             required />
-
-          <input
-            name="productPrice"
-            type="text"
-            defaultValue={this.props.product.productPrice}
-            pattern="[0-9]+"
-            onChange={this.props.onChange} />
 
           <input type="submit" value="Submit" />
         </form>
@@ -53,10 +46,10 @@ class EditProductForm extends React.Component {
   }
 }
 
-EditProductForm.propTypes = {
-  product: PropTypes.object,
+EditLocationForm.propTypes = {
+  location: PropTypes.object,
   onEditFormSubmission: PropTypes.func,
   onChange: PropTypes.func
 };
 
-export default EditProductForm;
+export default EditLocationForm;

@@ -13,7 +13,12 @@ function Admin(props) {
         customers={props.customers}
         onAddingNewCustomer={props.onAddingNewCustomer}
       />
-      <Locations />
+
+    <Locations
+        locations={props.locations}
+        onAddingNewLocation={props.onAddingNewLocation}
+      />
+
       <Products
         products={props.products}
         onAddingNewProduct={props.onAddingNewProduct}
@@ -26,6 +31,8 @@ function Admin(props) {
 Admin.propTypes = {
   customers: PropTypes.object,
   onAddingNewCustomer: PropTypes.func,
+  locations: PropTypes.object,
+  onAddingNewLocation: PropTypes.func,
   products: PropTypes.object,
   onAddingNewProduct: PropTypes.func
 };

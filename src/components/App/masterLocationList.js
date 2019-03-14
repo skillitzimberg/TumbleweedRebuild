@@ -1,25 +1,23 @@
-export const masterLocation
-    productName: "A thing",
-    productType: "desert",
-    ingredients: ["sugar", "flour", "butter", "olives"],
-    productDescription: "lorem stuff and things.",
-    productPrice: 5,
-    id: "hasd98hsad9n"
+export const masterLocationList = {
+  "iashdf8awehf348f": {
+    locationName: "farmer market one",
+    locationAddress: "2323 something st",
+    locationPostalCode: "234fq3fq",
+    locationDescription: "lorem stuff and things.",
+    id: "iashdf8awehf348f"
   },
-  "99234092j9e": {
-    productName: "Another thing",
-    productType: "sourdough",
-    ingredients: ["sugar", "flour", "butter", "sour"],
-    productDescription: "mother stuff and things.",
-    productPrice: 3,
-    id: "99234092j9e"
+  "w84y4nfif9fwe": {
+    locationName: "Another market",
+    locationAddress: "23 Juniper St",
+    locationPostalCode: "092834",
+    locationDescription: "lorem stuff and things.",
+    id: "w84y4nfif9fwe"
   },
-  "909348e90fj94jfq93u": {
-    productName: "raisin scone",
-    productType: "breakfast",
-    ingredients: ["sugar", "flour", "butter", "raisins"],
-    productDescription: "raisins . . . for breakfast.",
-    productPrice: 2,
-    id: "909348e90fj94jfq93u"
+  "824yf8wh4f8w4n84hfwe0": {
+    locationName: "bake sale",
+    locationAddress: "87 Holladay Ave",
+    locationPostalCode: "3245234",
+    locationDescription: "lorem stuff and things.",
+    id: "824yf8wh4f8w4n84hfwe0"
   },
 };

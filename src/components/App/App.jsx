@@ -9,6 +9,7 @@ import Product from "./../Products/Product";
 import Products from "./../Products/Products";
 import { Route, Switch } from "react-router-dom";
 import { masterCustomerList } from "./masterCustomerList";
+import { masterLocationList } from "./masterLocationList";
 import { masterProductList } from "./masterProductList";
 
 class App extends React.Component {
@@ -17,6 +18,7 @@ class App extends React.Component {
 
     this.state = {
       customerList: masterCustomerList,
+      locationList: masterLocationList,
       productList: masterProductList
     };
 
@@ -27,6 +29,10 @@ class App extends React.Component {
     this.handleAddingNewProduct = this.handleAddingNewProduct.bind(this);
     this.handleDeletingProduct = this.handleDeletingProduct.bind(this);
     this.handleEditingProduct = this.handleEditingProduct.bind(this);
+
+    this.handleAddingNewLocation = this.handleAddingNewLocation.bind(this);
+    this.handleDeletingLocation = this.handleDeletingLocation.bind(this);
+    this.handleEditingLocation = this.handleEditingLocation.bind(this);
   }
 
   render() {
@@ -40,10 +46,13 @@ class App extends React.Component {
             render={(props) => <Admin {...props}
               customers={this.state.customerList}
               onAddingNewCustomer={this.handleAddingNewCustomer}
+              locations={this.state.locationList}
+              onAddingNewLocation={this.handleAddingNewLocation}
               products={this.state.productList}
               onAddingNewProduct={this.handleAddingNewProduct}/>}
           />
 
+        // CUSTOMER ROUTES
           <Route
             exact path="/admin/customers"
             render={(props) => <Customers {...props}
@@ -60,9 +69,24 @@ class App extends React.Component {
               onEditCustomer={this.handleEditingCustomer}/>}
           />
 
-          <Route exact path="/admin/locations" component={Locations} />
-          <Route exact path="/admin/orders" component={Orders} />
+        // LOCATION ROUTES
+          <Route
+            exact path="/admin/locations"
+            render={(props) => <Locations {...props}
+              locations={this.state.locationList}
+              onAddingNewLocation={this.handleAddingNewLocation}
+              onDeletingLocation={this.handleDeletingLocation}/>}
+          />
 
+          <Route
+            exact path={"/admin/locations/:locationId"}
+            render={ (props) => <Location {...props}
+              locations={this.state.locationList}
+              onDeletingLocation={this.handleDeletingLocation}
+              onEditProduct={this.handleEditingLocation}/>}
+          />
+
+        // PRODUCT ROUTES
           <Route
             exact path="/admin/products"
             render={(props) => <Products {...props}
@@ -78,16 +102,18 @@ class App extends React.Component {
               onDeletingProduct={this.handleDeletingProduct}
               onEditProduct={this.handleEditingProduct}/>}
           />
+
+          <Route exact path="/admin/orders" component={Orders} />
         </Switch>
       </div>
     );
   }
 
+  // CUSTOMER CRUD
   handleAddingNewCustomer(newCustomer) {
     let newCustomerList = Object.assign({}, this.state.customerList, {
       [newCustomer.id]: newCustomer
     });
-
     this.setState({customerList: newCustomerList});
   }
 
@@ -107,11 +133,35 @@ class App extends React.Component {
     this.handleAddingNewCustomer(editThisCustomer);
   }
 
+  // LOCATION CRUD
+  handleAddingNewLocation(newLocation) {
+    let newLocationList = Object.assign({}, this.state.locationList, {
+      [newLocation.id]: newLocation
+    });
+    this.setState({locationList: newLocationList});
+  }
+
+  handleDeletingLocation(deleteThisLocation) {
+    let newLocationList = Object.assign({}, this.state.locationList);
+
+    for(let key in newLocationList) {
+      if (key === deleteThisLocation) {
+        delete newLocationList[deleteThisLocation];
+      }
+    }
+    this.setState({ locationList: newLocationList });
+  }
+
+  handleEditingLocation(editThisLocation) {
+    this.handleDeletingLocation(editThisLocation);
+    this.handleAddingNewLocation(editThisLocation);
+  }
+
+  // PRODUCT CRUD
   handleAddingNewProduct(newProduct) {
     let newProductList = Object.assign({}, this.state.productList, {
       [newProduct.id]: newProduct
     });
-
     this.setState({productList: newProductList});
   }
 

@@ -1,18 +1,32 @@
 import React from "react";
-import Location from "./../Locations/Location";
+import PropTypes from "prop-types";
+import LocationList from "./../Locations/LocationList";
 import NewLocationForm from "./../Locations/NewLocationForm";
-// import PropTypes from "prop-types";
+import "./locationStyles.css";
 
-function Locations() {
+function Locations(props) {
+  console.log("Locations props: ", props)
   return (
     <div>
-      <div className="container">
-        <p>Locations Works</p>
-        <Location />
-        <NewLocationForm />
+      <div className="locations">
+        <p>Locations</p>
+
+        <LocationList
+          locations={props.locations}
+          onDeletingLocation={props.onDeletingLocation}
+        />
+
+      <NewLocationForm onNewLocationCreation={props.onAddingNewLocation}/>
       </div>
     </div>
   );
 }
+
+Locations.propTypes = {
+  locations: PropTypes.object,
+  onAddingNewLocation: PropTypes.func,
+  onNewLocationCreation: PropTypes.func,
+  onDeletingLocation: PropTypes.func
+};
 
 export default Locations;

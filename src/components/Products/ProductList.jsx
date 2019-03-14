@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { v4 } from "uuid";
 
 function ProductList({products, onDeletingProduct}) {
-  console.log("ProductList props: ", products)
 
   function deleteProduct(productId) {
     event.preventDefault();

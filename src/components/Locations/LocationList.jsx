@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { v4 } from "uuid";
 
 function LocationList({locations, onDeletingLocation}) {
-
+  
   function deleteLocation(locationId) {
     event.preventDefault();
 
@@ -19,7 +19,7 @@ function LocationList({locations, onDeletingLocation}) {
           <Link
             to={`/admin/locations/${location.id}`}
           >
-            <p>{location.firstName} {location.lastName}</p>
+            <p>{location.locationName}</p>
           </Link>
           <button onClick={() => {deleteLocation(location.id);}}>Delete</button>
         </div>;
