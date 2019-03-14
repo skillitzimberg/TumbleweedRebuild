@@ -48,10 +48,9 @@ class Locution extends React.Component {
       <div>
         <div className="container">
           <h3>{this.state.locationName}</h3>
-          <p>{this.state.locationAddress}</p>
-          <p>{this.state.locationPostalCode}</p>
-          <p>{this.state.locationDescription}</p>
-          <p>{this.state.id}</p>
+          <p>Address: {this.state.locationAddress}</p>
+          <p>Zip: {this.state.locationPostalCode}</p>
+          <p>About: {this.state.locationDescription}</p>
         </div>
 
         <EditLocationForm

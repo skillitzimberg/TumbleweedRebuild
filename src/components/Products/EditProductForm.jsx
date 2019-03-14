@@ -41,9 +41,8 @@ class EditProductForm extends React.Component {
 
           <input
             name="productPrice"
-            type="text"
+            type="float"
             defaultValue={this.props.product.productPrice}
-            pattern="[0-9]+"
             onChange={this.props.onChange} />
 
           <input type="submit" value="Submit" />

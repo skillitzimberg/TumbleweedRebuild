@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 class EditLocationForm extends React.Component {
   constructor(props) {
+    console.log(props);
     super(props);
   }
 

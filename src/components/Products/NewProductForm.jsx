@@ -44,7 +44,7 @@ function NewProductForm(props){
           placeholder="Type"
           ref={(input) => {_productType = input;}}/>
         <input
-          type="number"
+          type="float"
           id="price"
           placeholder="Price"
           ref={(input) => {_productPrice = input;}}/>

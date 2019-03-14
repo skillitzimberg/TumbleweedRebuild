@@ -14,6 +14,7 @@ import { masterCustomerList } from "./masterCustomerList";
 import { masterLocationList } from "./masterLocationList";
 import { masterOrderList } from "./masterOrderList";
 import { masterProductList } from "./masterProductList";
+import "./../../assets/css/globalStyles.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -91,7 +92,7 @@ class App extends React.Component {
             render={ (props) => <Locution {...props}
               locations={this.state.locationList}
               onDeletingLocation={this.handleDeletingLocation}
-              onEditProduct={this.handleEditingLocation}/>}
+              onEditLocation={this.handleEditingLocation}/>}
           />
 
           <Route
