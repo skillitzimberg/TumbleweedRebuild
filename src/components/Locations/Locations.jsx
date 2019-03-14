@@ -5,7 +5,6 @@ import NewLocationForm from "./../Locations/NewLocationForm";
 import "./locationStyles.css";
 
 function Locations(props) {
-  console.log("Locations props: ", props)
   return (
     <div>
       <div className="locations">
@@ -16,7 +15,7 @@ function Locations(props) {
           onDeletingLocation={props.onDeletingLocation}
         />
 
-      <NewLocationForm onNewLocationCreation={props.onAddingNewLocation}/>
+        <NewLocationForm onNewLocationCreation={props.onAddingNewLocation}/>
       </div>
     </div>
   );

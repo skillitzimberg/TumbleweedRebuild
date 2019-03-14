@@ -6,7 +6,6 @@ import Products from "./../Products/Products";
 import PropTypes from "prop-types";
 
 function Admin(props) {
-  console.log("Admin props: ", props)
   return (
     <div className="container">
       <Customers
@@ -14,7 +13,7 @@ function Admin(props) {
         onAddingNewCustomer={props.onAddingNewCustomer}
       />
 
-    <Locations
+      <Locations
         locations={props.locations}
         onAddingNewLocation={props.onAddingNewLocation}
       />

@@ -5,7 +5,6 @@ import NewProductForm from "./../Products/NewProductForm";
 import "./productStyles.css";
 
 function Products(props) {
-  console.log("Products props: ", props)
   return (
     <div>
       <div className="products">
@@ -16,7 +15,7 @@ function Products(props) {
           onDeletingProduct={props.onDeletingProduct}
         />
 
-      <NewProductForm onNewProductCreation={props.onAddingNewProduct}/>
+        <NewProductForm onNewProductCreation={props.onAddingNewProduct}/>
       </div>
     </div>
   );

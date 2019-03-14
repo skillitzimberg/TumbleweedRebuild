@@ -37,7 +37,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("App state: ", this.state)
     return (
       <div>
         <Header />
@@ -53,7 +52,6 @@ class App extends React.Component {
               onAddingNewProduct={this.handleAddingNewProduct}/>}
           />
 
-        // CUSTOMER ROUTES
           <Route
             exact path="/admin/customers"
             render={(props) => <Customers {...props}
@@ -70,7 +68,6 @@ class App extends React.Component {
               onEditCustomer={this.handleEditingCustomer}/>}
           />
 
-        // LOCATION ROUTES
           <Route
             exact path="/admin/locations"
             render={(props) => <Locations {...props}
@@ -87,7 +84,6 @@ class App extends React.Component {
               onEditProduct={this.handleEditingLocation}/>}
           />
 
-        // PRODUCT ROUTES
           <Route
             exact path="/admin/products"
             render={(props) => <Products {...props}
@@ -110,7 +106,7 @@ class App extends React.Component {
     );
   }
 
-  // CUSTOMER CRUD
+
   handleAddingNewCustomer(newCustomer) {
     let newCustomerList = Object.assign({}, this.state.customerList, {
       [newCustomer.id]: newCustomer
@@ -134,7 +130,7 @@ class App extends React.Component {
     this.handleAddingNewCustomer(editThisCustomer);
   }
 
-  // LOCATION CRUD
+
   handleAddingNewLocation(newLocation) {
     let newLocationList = Object.assign({}, this.state.locationList, {
       [newLocation.id]: newLocation
@@ -158,7 +154,7 @@ class App extends React.Component {
     this.handleAddingNewLocation(editThisLocation);
   }
 
-  // PRODUCT CRUD
+
   handleAddingNewProduct(newProduct) {
     let newProductList = Object.assign({}, this.state.productList, {
       [newProduct.id]: newProduct
