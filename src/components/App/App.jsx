@@ -5,12 +5,14 @@ import Customer from "./../Customers/Customer";
 import Customers from "./../Customers/Customers";
 import Locution from "./../Locations/Location";
 import Locations from "./../Locations/Locations";
+import Order from "./../Orders/Order";
 import Orders from "./../Orders/Orders";
 import Product from "./../Products/Product";
 import Products from "./../Products/Products";
 import { Route, Switch } from "react-router-dom";
 import { masterCustomerList } from "./masterCustomerList";
 import { masterLocationList } from "./masterLocationList";
+import { masterOrderList } from "./masterOrderList";
 import { masterProductList } from "./masterProductList";
 
 class App extends React.Component {
@@ -20,6 +22,7 @@ class App extends React.Component {
     this.state = {
       customerList: masterCustomerList,
       locationList: masterLocationList,
+      orderList: masterOrderList,
       productList: masterProductList
     };
 
@@ -34,9 +37,14 @@ class App extends React.Component {
     this.handleAddingNewLocation = this.handleAddingNewLocation.bind(this);
     this.handleDeletingLocation = this.handleDeletingLocation.bind(this);
     this.handleEditingLocation = this.handleEditingLocation.bind(this);
+
+    this.handleAddingNewOrder = this.handleAddingNewOrder.bind(this);
+    this.handleDeletingOrder = this.handleDeletingOrder.bind(this);
+    this.handleEditingOrder = this.handleEditingOrder.bind(this);
   }
 
   render() {
+    console.log("App state: ", this.state);
     return (
       <div>
         <Header />
@@ -48,6 +56,8 @@ class App extends React.Component {
               onAddingNewCustomer={this.handleAddingNewCustomer}
               locations={this.state.locationList}
               onAddingNewLocation={this.handleAddingNewLocation}
+              orders={this.state.orderList}
+              onAddingNewOrder={this.handleAddingNewOrder}
               products={this.state.productList}
               onAddingNewProduct={this.handleAddingNewProduct}/>}
           />
@@ -100,7 +110,21 @@ class App extends React.Component {
               onEditProduct={this.handleEditingProduct}/>}
           />
 
-          <Route exact path="/admin/orders" component={Orders} />
+          <Route
+            exact path="/admin/orders"
+            render={(props) => <Orders {...props}
+              orders={this.state.orderList}
+              onAddingNewOrder={this.handleAddingNewOrder}
+              onDeletingOrder={this.handleDeletingOrder}/>}
+          />
+
+          <Route
+            exact path={"/admin/orders/:orderId"}
+            render={ (props) => <Order {...props}
+              orders={this.state.orderList}
+              onDeletingOrder={this.handleDeletingOrder}
+              onEditOrder={this.handleEditingOrder}/>}
+          />
         </Switch>
       </div>
     );
@@ -176,6 +200,30 @@ class App extends React.Component {
   handleEditingProduct(editThisProduct) {
     this.handleDeletingProduct(editThisProduct);
     this.handleAddingNewProduct(editThisProduct);
+  }
+
+
+  handleAddingNewOrder(newOrder) {
+    let newOrderList = Object.assign({}, this.state.orderList, {
+      [newOrder.id]: newOrder
+    });
+    this.setState({orderList: newOrderList});
+  }
+
+  handleDeletingOrder(deleteThisOrder) {
+    let newOrderList = Object.assign({}, this.state.orderList);
+
+    for(let key in newOrderList) {
+      if (key === deleteThisOrder) {
+        delete newOrderList[deleteThisOrder];
+      }
+    }
+    this.setState({ orderList: newOrderList });
+  }
+
+  handleEditingOrder(editThisOrder) {
+    this.handleDeletingOrder(editThisOrder);
+    this.handleAddingNewOrder(editThisOrder);
   }
 
 }

@@ -14,14 +14,35 @@ function NewOrderForm(props){
 
     props.onNewOrderCreation(
       {
-        orderName: _orderName.value,
-        orderType: _orderType.value,
-        ingredients: _ingredients.value,
-        orderDescription: _orderDescription.value,
-        orderPrice: _orderPrice.value,
-        id: v4()
+        orderId: v4(),
+        orderNumber: string,
+        customerId: string,
+        orderDateTime: date,
+        scheduledPickupDate: date,
+        scheduledPickupLocation: string,
+        orderStatus: bool,
+        productsOrdered: [
+          {
+            productId: string,
+            quantityOrdered: number,
+          }
+        ],
       }
-    );
+
+    order: {
+      orderNumber: string,
+      customerId, string,
+      orderDateTime: date,
+      scheduledPickupDate: date,
+      scheduledPickupLocation: string,
+      orderStatus: bool,
+      productsOrdered: [
+        {
+          productId: string,
+          quantityOrdered: number,
+        }
+      ],
+    }
 
     _orderName.value = "";
     _orderType.value = "";

@@ -5,10 +5,10 @@ import { v4 } from "uuid";
 
 function OrderList({orders, onDeletingOrder}) {
 
-  function deletePrder(orderId) {
+  function deleteOrder(orderId) {
     event.preventDefault();
 
-    onDeletingPrder(orderId);
+    onDeletingOrder(orderId);
   }
 
   return (
@@ -19,9 +19,9 @@ function OrderList({orders, onDeletingOrder}) {
           <Link
             to={`/admin/orders/${order.id}`}
           >
-            <p>{order.orderName}</p>
+            <p>{order.id}</p>
           </Link>
-          <button onClick={() => {deletePrder(order.id);}}>Delete</button>
+          <button onClick={() => {deleteOrder(order.id);}}>Delete</button>
         </div>;
       }
       )}

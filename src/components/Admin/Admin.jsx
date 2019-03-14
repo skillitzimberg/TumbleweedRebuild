@@ -6,6 +6,7 @@ import Products from "./../Products/Products";
 import PropTypes from "prop-types";
 
 function Admin(props) {
+  console.log("Admin: ", props);
   return (
     <div className="container">
       <Customers
@@ -22,7 +23,11 @@ function Admin(props) {
         products={props.products}
         onAddingNewProduct={props.onAddingNewProduct}
       />
-      <Orders />
+
+      <Orders
+        orders={props.orders}
+        onAddingNewOrder={props.onAddingNewOrder}
+      />
     </div>
   );
 }
@@ -32,6 +37,8 @@ Admin.propTypes = {
   onAddingNewCustomer: PropTypes.func,
   locations: PropTypes.object,
   onAddingNewLocation: PropTypes.func,
+  orders: PropTypes.object,
+  onAddingNewOrder: PropTypes.func,
   products: PropTypes.object,
   onAddingNewProduct: PropTypes.func
 };

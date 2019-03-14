@@ -1,4 +1,4 @@
-export const masterProductList = {
+export const masterOrderList = {
   "hasd98hsad9n": {
     productName: "A thing",
     productType: "desert",

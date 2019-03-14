@@ -5,6 +5,7 @@ import NewOrderForm from "./../Orders/NewOrderForm";
 import "./orderStyles.css";
 
 function Orders(props) {
+  console.log("Orders: ", props);
   return (
     <div>
       <div className="orders">
