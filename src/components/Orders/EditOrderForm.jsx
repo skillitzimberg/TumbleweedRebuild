@@ -12,39 +12,11 @@ class EditOrderForm extends React.Component {
 
         <form onSubmit={this.props.onEditFormSubmission}>
           <input
-            name="orderName"
-            type="text"
-            defaultValue={this.props.order.orderName}
+            name="scheduledPickupDate"
+            type="date"
+            defaultValue={this.props.order.scheduledPickupDate}
             onChange={this.props.onChange}
             required />
-
-          <input
-            name="orderType"
-            type="text"
-            defaultValue={this.props.order.orderType}
-            onChange={this.props.onChange}
-            required />
-
-          <input
-            name="ingredients"
-            type="text"
-            defaultValue={this.props.order.ingredients}
-            onChange={this.props.onChange}
-            required />
-
-          <input
-            name="orderDescription"
-            type="text"
-            defaultValue={this.props.order.orderDescription}
-            onChange={this.props.onChange}
-            required />
-
-          <input
-            name="orderPrice"
-            type="text"
-            defaultValue={this.props.order.orderPrice}
-            pattern="[0-9]+"
-            onChange={this.props.onChange} />
 
           <input type="submit" value="Submit" />
         </form>

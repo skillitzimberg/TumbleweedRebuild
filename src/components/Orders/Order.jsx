@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Moment from "moment";
 import EditOrderForm from "./../Orders/EditOrderForm";
 
 class Order extends React.Component {
@@ -8,11 +9,8 @@ class Order extends React.Component {
     const order = props.orders[props.match.params.orderId];
 
     this.state = {
-      orderName: order.orderName,
-      orderType: order.orderType,
-      ingredients: order.ingredients,
-      orderDescription: order.orderDescription,
-      orderPrice: order.orderPrice,
+      orderDateTime: order.orderDateTime,
+      scheduledPickupDate: order.scheduledPickupDate,
       id: order.id
     };
 
@@ -35,25 +33,21 @@ class Order extends React.Component {
 
     this.props.onEditOrder(
       {
-        orderName: this.state.orderName,
-        orderType: this.state.orderType,
-        ingredients: this.state.ingredients,
-        orderDescription: this.state.orderDescription,
-        orderPrice: this.state.orderPrice,
+        orderDateTime: this.state.orderDateTime,
+        scheduledPickupDate: this.state.scheduledPickupDate,
         id: this.state.id
       });
   }
 
   render() {
     const order = this.state;
+    const scheduledPickup = new Moment(this.state.scheduledPickupDate).format("MMM Do YY");
     return (
       <div>
         <div className="container">
-          <h3>{this.state.orderName}</h3>
-          <p>{this.state.orderType}</p>
-          <p>{this.state.ingredients}</p>
-          <p>{this.state.orderDescription}</p>
-          <p>{this.state.orderPrice}</p>
+          <h3>Order Id: {this.state.id}</h3>
+          <p>Order Placed: {this.state.orderDateTime}</p>
+          <p>Scheduled Pickup: {scheduledPickup}</p>
         </div>
 
         <EditOrderForm
@@ -69,7 +63,7 @@ class Order extends React.Component {
 Order.propTypes = {
   match: PropTypes.object,
   orders: PropTypes.object,
-  orderName: PropTypes.string,
+  orderDateTime: PropTypes.string,
   onEditOrder: PropTypes.func
 };
 
