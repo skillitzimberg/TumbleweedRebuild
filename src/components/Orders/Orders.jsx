@@ -16,7 +16,11 @@ function Orders(props) {
           onDeletingOrder={props.onDeletingOrder}
         />
 
-        <NewOrderForm onNewOrderCreation={props.onAddingNewOrder}/>
+        <NewOrderForm
+          customers={props.customers}
+          locations={props.locations}
+          products={props.products}
+          onNewOrderCreation={props.onAddingNewOrder}/>
       </div>
     </div>
   );

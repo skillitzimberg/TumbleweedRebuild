@@ -4,6 +4,7 @@ import { v4 } from "uuid";
 import Moment from "moment";
 
 function NewOrderForm(props){
+  console.log("Order form: ", props);
   let _scheduledPickupDate = null;
 
   function handleNewOrderFormSubmission(event) {

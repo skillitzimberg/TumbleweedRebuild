@@ -25,6 +25,9 @@ function Admin(props) {
       />
 
       <Orders
+        customers={props.customers}
+        locations={props.locations}
+        products={props.products}
         orders={props.orders}
         onAddingNewOrder={props.onAddingNewOrder}
       />
