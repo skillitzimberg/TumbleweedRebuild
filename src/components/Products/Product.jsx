@@ -4,7 +4,6 @@ import EditProductForm from "./../Products/EditProductForm";
 
 class Product extends React.Component {
   constructor(props) {
-    console.log("Product props: ", props)
     super(props);
     const product = props.products[props.match.params.productId];
 

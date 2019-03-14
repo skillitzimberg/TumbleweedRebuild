@@ -4,7 +4,6 @@ import EditLocationForm from "./../Locations/EditLocationForm";
 
 class Locution extends React.Component {
   constructor(props) {
-    console.log("Location props: ", props)
     super(props);
     const location = props.locations[props.match.params.locationId];
 
