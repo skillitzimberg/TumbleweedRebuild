@@ -1,67 +1,69 @@
 import React from "react";
-// import { v4 } from "uuid";
-// import Moment from "moment";
-// import c from "./../constants";
-// import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { v4 } from "uuid";
 
-function NewOrderForm(){
-
-  let _customer = null;
-  let _pickupLocation = null;
-  let _pickupDate = null;
+function NewOrderForm(props){
+  let _orderName = null;
+  let _orderType = null;
+  let _ingredients = null;
+  let _orderDescription = null;
+  let _orderPrice = null;
 
   function handleNewOrderFormSubmission(event) {
     event.preventDefault();
-    // const { dispatch } = props;
-    // const action = {
-    //   type: "ADD_TICKET",
-    //   id: v4(),
-    //   customer: _customer.value,
-    //   pickupLocation: _pickupLocation.value,
-    //   pickupDate: _pickupDate.value,
-    //   email: _email.value,
-    //   postl: _postalCode.value,
-    //   dateAdded: new Moment(),
-    // };
-    // dispatch(action);
-    _customer.value = "";
-    _pickupLocation.value = "";
-    _pickupDate.value = "";
-  }
 
-  // - Order number
-  // - Customer
-  // - Pickup Location
-  // - Scheduled Pickup Date
-  // - Date the Order was Picked up
-  // - List of Products ordered
-  // - Quantities for each Product ordered
-  // - Subtotal for each Product ordered
-  // - Order total
-  // - Status: pending/complete
+    props.onNewOrderCreation(
+      {
+        orderName: _orderName.value,
+        orderType: _orderType.value,
+        ingredients: _ingredients.value,
+        orderDescription: _orderDescription.value,
+        orderPrice: _orderPrice.value,
+        id: v4()
+      }
+    );
+
+    _orderName.value = "";
+    _orderType.value = "";
+    _ingredients.value = "";
+    _orderDescription.value = "";
+    _orderPrice.value = "";
+  }
 
   return (
     <div>
       <form onSubmit={handleNewOrderFormSubmission}>
         <input
           type="text"
-          id="customer"
-          placeholder="Customer"
-          ref={(input) => {_customer = input;}}/>
+          id="name"
+          placeholder="Order Name"
+          ref={(input) => {_orderName = input;}}/>
         <input
           type="text"
-          id="pickupLocation"
-          placeholder="Pick Location"
-          ref={(input) => {_pickupLocation = input;}}/>
+          id="type"
+          placeholder="Type"
+          ref={(input) => {_orderType = input;}}/>
         <input
-          type="text"
-          id="pickupDate"
-          placeholder="Pickup Date"
-          ref={(input) => {_pickupDate = input;}}/>
+          type="number"
+          id="price"
+          placeholder="Price"
+          ref={(input) => {_orderPrice = input;}}/>
+        <textarea
+          id="ingredients"
+          placeholder="Ingredients"
+          ref={(textarea) => {_ingredients = textarea;}}/>
+        <textarea
+          id="description"
+          placeholder="Description"
+          ref={(textarea) => {_orderDescription = textarea;}}/>
         <button type="submit">Add to Orders</button>
       </form>
     </div>
   );
 }
+
+NewOrderForm.propTypes = {
+  onNewOrderCreation: PropTypes.func
+};
 
 export default NewOrderForm;

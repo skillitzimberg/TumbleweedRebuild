@@ -3,25 +3,25 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { v4 } from "uuid";
 
-function ProductList({products, onDeletingProduct}) {
+function OrderList({orders, onDeletingOrder}) {
 
-  function deleteProduct(productId) {
+  function deletePrder(orderId) {
     event.preventDefault();
 
-    onDeletingProduct(productId);
+    onDeletingPrder(orderId);
   }
 
   return (
     <div className="container">
-      {Object.keys(products).map((productId) => {
-        let product = products[productId];
+      {Object.keys(orders).map((orderId) => {
+        let order = orders[orderId];
         return <div key={v4()}>
           <Link
-            to={`/admin/products/${product.id}`}
+            to={`/admin/orders/${order.id}`}
           >
-            <p>{product.productName}</p>
+            <p>{order.orderName}</p>
           </Link>
-          <button onClick={() => {deleteProduct(product.id);}}>Delete</button>
+          <button onClick={() => {deletePrder(order.id);}}>Delete</button>
         </div>;
       }
       )}
@@ -29,9 +29,9 @@ function ProductList({products, onDeletingProduct}) {
   );
 }
 
-ProductList.propTypes = {
-  products: PropTypes.object,
-  onDeletingProduct: PropTypes.func
+OrderList.propTypes = {
+  orders: PropTypes.object,
+  onDeletingOrder: PropTypes.func
 };
 
-export default ProductList;
+export default OrderList;

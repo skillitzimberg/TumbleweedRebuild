@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-class EditProductForm extends React.Component {
+class EditOrderForm extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -12,37 +12,37 @@ class EditProductForm extends React.Component {
 
         <form onSubmit={this.props.onEditFormSubmission}>
           <input
-            name="productName"
+            name="orderName"
             type="text"
-            defaultValue={this.props.product.productName}
+            defaultValue={this.props.order.orderName}
             onChange={this.props.onChange}
             required />
 
           <input
-            name="productType"
+            name="orderType"
             type="text"
-            defaultValue={this.props.product.productType}
+            defaultValue={this.props.order.orderType}
             onChange={this.props.onChange}
             required />
 
           <input
             name="ingredients"
             type="text"
-            defaultValue={this.props.product.ingredients}
+            defaultValue={this.props.order.ingredients}
             onChange={this.props.onChange}
             required />
 
           <input
-            name="productDescription"
+            name="orderDescription"
             type="text"
-            defaultValue={this.props.product.productDescription}
+            defaultValue={this.props.order.orderDescription}
             onChange={this.props.onChange}
             required />
 
           <input
-            name="productPrice"
+            name="orderPrice"
             type="text"
-            defaultValue={this.props.product.productPrice}
+            defaultValue={this.props.order.orderPrice}
             pattern="[0-9]+"
             onChange={this.props.onChange} />
 
@@ -53,10 +53,10 @@ class EditProductForm extends React.Component {
   }
 }
 
-EditProductForm.propTypes = {
-  product: PropTypes.object,
+EditOrderForm.propTypes = {
+  order: PropTypes.object,
   onEditFormSubmission: PropTypes.func,
   onChange: PropTypes.func
 };
 
-export default EditProductForm;
+export default EditOrderForm;
