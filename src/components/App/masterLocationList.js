@@ -1,23 +1,23 @@
 export const masterLocationList = {
-  "iashdf8awehf348f": {
+  "9ef94h": {
     locationName: "farmer market one",
     locationAddress: "2323 something st",
     locationPostalCode: "234fq3fq",
     locationDescription: "lorem stuff and things.",
-    id: "iashdf8awehf348f"
+    id: "9ef94h"
   },
-  "w84y4nfif9fwe": {
+  "9wnv90nweo": {
     locationName: "Another market",
     locationAddress: "23 Juniper St",
     locationPostalCode: "092834",
     locationDescription: "lorem stuff and things.",
-    id: "w84y4nfif9fwe"
+    id: "9wnv90nweo"
   },
-  "824yf8wh4f8w4n84hfwe0": {
+  "3nf9fn38nf3": {
     locationName: "bake sale",
     locationAddress: "87 Holladay Ave",
     locationPostalCode: "3245234",
     locationDescription: "lorem stuff and things.",
-    id: "824yf8wh4f8w4n84hfwe0"
+    id: "3nf9fn38nf3"
   },
 };

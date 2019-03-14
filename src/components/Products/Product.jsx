@@ -42,8 +42,7 @@ class Product extends React.Component {
         productDescription: this.state.productDescription,
         productPrice: this.state.productPrice,
         id: this.state.id
-      }
-    );
+      });
   }
 
   render() {

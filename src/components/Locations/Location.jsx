@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import EditLocationForm from "./../Locations/EditLocationForm";
 
-class Location extends React.Component {
+class Locution extends React.Component {
   constructor(props) {
     console.log("Location props: ", props)
     super(props);
@@ -40,8 +40,7 @@ class Location extends React.Component {
         locationPostalCode: this.state.locationPostalCode,
         locationDescription: this.state.locationDescription,
         id: this.state.id
-      }
-    );
+      });
   }
 
   render() {
@@ -66,11 +65,11 @@ class Location extends React.Component {
   }
 }
 
-Location.propTypes = {
+Locution.propTypes = {
   match: PropTypes.object,
   locations: PropTypes.object,
   locationName: PropTypes.string,
   onEditLocation: PropTypes.func
 };
 
-export default Location;
+export default Locution;

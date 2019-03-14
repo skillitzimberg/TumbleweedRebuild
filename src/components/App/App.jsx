@@ -3,6 +3,7 @@ import Header from "./../Header/Header";
 import Admin from "./../Admin/Admin";
 import Customer from "./../Customers/Customer";
 import Customers from "./../Customers/Customers";
+import Locution from "./../Locations/Location";
 import Locations from "./../Locations/Locations";
 import Orders from "./../Orders/Orders";
 import Product from "./../Products/Product";
@@ -79,8 +80,8 @@ class App extends React.Component {
           />
 
           <Route
-            exact path={"/admin/locations/:locationId"}
-            render={ (props) => <Location {...props}
+            path={"/admin/locations/:locationId"}
+            render={ (props) => <Locution {...props}
               locations={this.state.locationList}
               onDeletingLocation={this.handleDeletingLocation}
               onEditProduct={this.handleEditingLocation}/>}
