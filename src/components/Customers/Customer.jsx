@@ -4,9 +4,9 @@ import EditCustomerForm from "./../Customers/EditCustomerForm";
 
 class Customer extends React.Component {
   constructor(props) {
-
     super(props);
-    const customer = props.customers[props.match.params.customerId];
+
+    const customer = props.customers[props.match.params.id - 1];
 
     this.state = {
       firstName: customer.firstName,
@@ -61,7 +61,7 @@ class Customer extends React.Component {
           customer={customer}
           onEditCustomer={this.props.onEditCustomer}
           onChange={this.handleChange}
-          onEditFormSubmission={this.handleEditFormSubmission}/>
+          onEditFormSubmission={this.handleEditFormSubmission} />
       </div>
     );
   }
@@ -69,7 +69,7 @@ class Customer extends React.Component {
 
 Customer.propTypes = {
   match: PropTypes.object,
-  customers: PropTypes.object,
+  customers: PropTypes.array,
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   phone: PropTypes.string,

@@ -6,6 +6,7 @@ import "./customerStyles.css";
 
 function Customers(props) {
 
+  console.log("Customers: ", props);
   return (
     <div>
       <div className="customers">
@@ -16,14 +17,14 @@ function Customers(props) {
           onDeletingCustomer={props.onDeletingCustomer}
         />
 
-        <NewCustomerForm onNewCustomerCreation={props.onAddingNewCustomer}/>
+        <NewCustomerForm onNewCustomerCreation={props.onAddingNewCustomer} />
       </div>
     </div>
   );
 }
 
 Customers.propTypes = {
-  customers: PropTypes.object,
+  customers: PropTypes.array,
   onAddingNewCustomer: PropTypes.func,
   onNewCustomerCreation: PropTypes.func,
   onDeletingCustomer: PropTypes.func

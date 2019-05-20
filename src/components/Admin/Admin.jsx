@@ -36,7 +36,7 @@ function Admin(props) {
 }
 
 Admin.propTypes = {
-  customers: PropTypes.object,
+  customers: PropTypes.array,
   onAddingNewCustomer: PropTypes.func,
   locations: PropTypes.object,
   onAddingNewLocation: PropTypes.func,

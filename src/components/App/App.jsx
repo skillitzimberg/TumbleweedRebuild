@@ -25,7 +25,7 @@ class App extends React.Component {
       locationList: masterLocationList,
       orderList: masterOrderList,
       productList: masterProductList
-    };
+    }
 
     this.handleAddingNewCustomer = this.handleAddingNewCustomer.bind(this);
     this.handleDeletingCustomer = this.handleDeletingCustomer.bind(this);
@@ -44,6 +44,12 @@ class App extends React.Component {
     this.handleEditingOrder = this.handleEditingOrder.bind(this);
   }
 
+  componentDidMount() {
+    fetch('http://localhost:3000/customers')
+      .then(response => response.json())
+      .then(customerList => this.setState({ customerList }));
+  }
+
   render() {
     console.log("App state: ", this.state);
     return (
@@ -60,7 +66,7 @@ class App extends React.Component {
               orders={this.state.orderList}
               onAddingNewOrder={this.handleAddingNewOrder}
               products={this.state.productList}
-              onAddingNewProduct={this.handleAddingNewProduct}/>}
+              onAddingNewProduct={this.handleAddingNewProduct} />}
           />
 
           <Route
@@ -68,15 +74,15 @@ class App extends React.Component {
             render={(props) => <Customers {...props}
               customers={this.state.customerList}
               onAddingNewCustomer={this.handleAddingNewCustomer}
-              onDeletingCustomer={this.handleDeletingCustomer}/>}
+              onDeletingCustomer={this.handleDeletingCustomer} />}
           />
 
           <Route
-            exact path={"/admin/customers/:customerId"}
-            render={ (props) => <Customer {...props}
+            exact path={"/admin/customers/:id"}
+            render={(props) => <Customer {...props}
               customers={this.state.customerList}
               onDeletingCustomer={this.handleDeletingCustomer}
-              onEditCustomer={this.handleEditingCustomer}/>}
+              onEditCustomer={this.handleEditingCustomer} />}
           />
 
           <Route
@@ -84,15 +90,15 @@ class App extends React.Component {
             render={(props) => <Locations {...props}
               locations={this.state.locationList}
               onAddingNewLocation={this.handleAddingNewLocation}
-              onDeletingLocation={this.handleDeletingLocation}/>}
+              onDeletingLocation={this.handleDeletingLocation} />}
           />
 
           <Route
             path={"/admin/locations/:locationId"}
-            render={ (props) => <Locution {...props}
+            render={(props) => <Locution {...props}
               locations={this.state.locationList}
               onDeletingLocation={this.handleDeletingLocation}
-              onEditLocation={this.handleEditingLocation}/>}
+              onEditLocation={this.handleEditingLocation} />}
           />
 
           <Route
@@ -100,15 +106,15 @@ class App extends React.Component {
             render={(props) => <Products {...props}
               products={this.state.productList}
               onAddingNewProduct={this.handleAddingNewProduct}
-              onDeletingProduct={this.handleDeletingProduct}/>}
+              onDeletingProduct={this.handleDeletingProduct} />}
           />
 
           <Route
             exact path={"/admin/products/:productId"}
-            render={ (props) => <Product {...props}
+            render={(props) => <Product {...props}
               products={this.state.productList}
               onDeletingProduct={this.handleDeletingProduct}
-              onEditProduct={this.handleEditingProduct}/>}
+              onEditProduct={this.handleEditingProduct} />}
           />
 
           <Route
@@ -116,15 +122,15 @@ class App extends React.Component {
             render={(props) => <Orders {...props}
               orders={this.state.orderList}
               onAddingNewOrder={this.handleAddingNewOrder}
-              onDeletingOrder={this.handleDeletingOrder}/>}
+              onDeletingOrder={this.handleDeletingOrder} />}
           />
 
           <Route
             exact path={"/admin/orders/:orderId"}
-            render={ (props) => <Order {...props}
+            render={(props) => <Order {...props}
               orders={this.state.orderList}
               onDeletingOrder={this.handleDeletingOrder}
-              onEditOrder={this.handleEditingOrder}/>}
+              onEditOrder={this.handleEditingOrder} />}
           />
         </Switch>
       </div>
@@ -133,16 +139,34 @@ class App extends React.Component {
 
 
   handleAddingNewCustomer(newCustomer) {
-    let newCustomerList = Object.assign({}, this.state.customerList, {
-      [newCustomer.id]: newCustomer
-    });
-    this.setState({customerList: newCustomerList});
+    fetch('/customers', {
+      method: 'POST',
+      data: newCustomer
+    })
+      .then(function (response) {
+        return response.json()
+      }).then(function (body) {
+        console.log(body);
+      });
+
+    // let newCustomerList = Object.assign({}, this.state.customerList, {
+    //   [newCustomer.id]: newCustomer
+    // });
+    // this.setState({ customerList: newCustomerList });
   }
+
+
+  // handleAddingNewCustomer(newCustomer) {
+  //   let newCustomerList = Object.assign({}, this.state.customerList, {
+  //     [newCustomer.id]: newCustomer
+  //   });
+  //   this.setState({ customerList: newCustomerList });
+  // }
 
   handleDeletingCustomer(deleteThisCustomer) {
     let newCustomerList = Object.assign({}, this.state.customerList);
 
-    for(let key in newCustomerList) {
+    for (let key in newCustomerList) {
       if (key === deleteThisCustomer) {
         delete newCustomerList[deleteThisCustomer];
       }
@@ -160,13 +184,13 @@ class App extends React.Component {
     let newLocationList = Object.assign({}, this.state.locationList, {
       [newLocation.id]: newLocation
     });
-    this.setState({locationList: newLocationList});
+    this.setState({ locationList: newLocationList });
   }
 
   handleDeletingLocation(deleteThisLocation) {
     let newLocationList = Object.assign({}, this.state.locationList);
 
-    for(let key in newLocationList) {
+    for (let key in newLocationList) {
       if (key === deleteThisLocation) {
         delete newLocationList[deleteThisLocation];
       }
@@ -184,13 +208,13 @@ class App extends React.Component {
     let newProductList = Object.assign({}, this.state.productList, {
       [newProduct.id]: newProduct
     });
-    this.setState({productList: newProductList});
+    this.setState({ productList: newProductList });
   }
 
   handleDeletingProduct(deleteThisProduct) {
     let newProductList = Object.assign({}, this.state.productList);
 
-    for(let key in newProductList) {
+    for (let key in newProductList) {
       if (key === deleteThisProduct) {
         delete newProductList[deleteThisProduct];
       }
@@ -208,13 +232,13 @@ class App extends React.Component {
     let newOrderList = Object.assign({}, this.state.orderList, {
       [newOrder.id]: newOrder
     });
-    this.setState({orderList: newOrderList});
+    this.setState({ orderList: newOrderList });
   }
 
   handleDeletingOrder(deleteThisOrder) {
     let newOrderList = Object.assign({}, this.state.orderList);
 
-    for(let key in newOrderList) {
+    for (let key in newOrderList) {
       if (key === deleteThisOrder) {
         delete newOrderList[deleteThisOrder];
       }
