@@ -18,7 +18,7 @@ function CustomerList({ customers, onDeletingCustomer }) {
           <Link
             to={`/admin/customers/${customer.id}`}
           >
-            <p>{customer.firstName} {customer.lastName}</p>
+            <p>{customer.first_name} {customer.last_name}</p>
           </Link>
           <button onClick={() => { deleteCustomer(customer.id); }}>Delete</button>
         </div>;
