@@ -6,19 +6,29 @@ class Customer extends React.Component {
   constructor(props) {
     super(props);
 
-    const customer = props.customers[props.match.params.id - 1];
+    const customer = this.getCustomer(props.customers, props.match.params.id)
 
     this.state = {
-      firstName: customer.firstName,
-      lastName: customer.lastName,
+      firstName: customer.first_name,
+      lastName: customer.last_name,
       phone: customer.phone,
       email: customer.email,
-      postalCode: customer.postalCode,
+      postalCode: customer.postal_code,
       id: customer.id
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleEditFormSubmission = this.handleEditFormSubmission.bind(this);
+  }
+
+  getCustomer(customers, id) {
+    let customer;
+    for (let i = 0; i < customers.length; i++) {
+      if (customers[i].id == id) {
+        customer = customers[i]
+      }
+    }
+    return customer
   }
 
   handleChange(event) {
