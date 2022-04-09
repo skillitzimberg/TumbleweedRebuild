@@ -22,7 +22,7 @@
   "homepage": "https://github.com/skillitzimberg/TumbleweedRebuild#readme",
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "moment": "^2.18.1",
+    "moment": "^2.29.2",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
